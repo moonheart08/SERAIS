@@ -25,3 +25,63 @@ DEST <- SRC1 - SRC2
 ```
 ### Flags
 Sets flags according to the result.
+
+## AND
+| Mnemonic | Opcode     | Func           | Encoding          | Description                |
+|----------|------------|----------------|-------------------|----------------------------|
+| AND      | `0000 010` | `000`<br>`001` | A-Form<br>AI-Form | Bitwise AND two quadwords. |
+### Operation
+```
+DEST <- SRC1 & SRC2
+```
+
+### Flags
+Sets flags according to the result.
+
+## OR
+| Mnemonic | Opcode     | Func           | Encoding          | Description                |
+|----------|------------|----------------|-------------------|----------------------------|
+| OR       | `0000 010` | `010`<br>`011` | A-Form<br>AI-Form | Bitwise OR two quadwords.  |
+### Operation
+```
+DEST <- SRC1 | SRC2
+```
+
+### Flags
+Sets flags according to the result.
+
+## XOR
+| Mnemonic | Opcode     | Func           | Encoding          | Description                |
+|----------|------------|----------------|-------------------|----------------------------|
+| XOR      | `0000 010` | `100`<br>`101` | A-Form<br>AI-Form | Bitwise XOR two quadwords. |
+### Operation
+```
+DEST <- SRC1 ^ SRC2
+```
+
+### Flags
+Sets flags according to the result.
+
+## MOV
+| Mnemonic | Opcode     | Func  | Encoding | Description          |
+|----------|------------|-------|----------|----------------------|
+| MOV      | `0000 010` | `110` | UA-Form  | Copies SRC1 to DEST. |
+### Operation
+```
+DEST <- SRC1
+```
+
+### Flags
+Doesn't set flags.
+
+## NOP
+| Mnemonic | Opcode     | Func  | Encoding | Description          |
+|----------|------------|-------|----------|----------------------|
+| NOP      | `0000 010` | `111` | UA-Form  | No operation.        |
+### Operation
+```
+(Does nothing.)
+```
+
+### Flags
+Doesn't set flags.
