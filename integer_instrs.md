@@ -5,11 +5,12 @@
 | ADD.W    | `0000 000` | `010`<br>`011` | A-Form<br>AI-Form | Add two word-size values, zero extending to 64-bit       |
 | ADD.D    | `0000 000` | `100`<br>`101` | A-Form<br>AI-Form | Add two doubleword-size values, zero extending to 64-bit |
 | ADD.Q    | `0000 000` | `110`<br>`111` | A-Form<br>AI-Form | Add two quadword-size values, zero extending to 64-bit   |
-### General behavior
+### Operation
 ```
-OPSIZE result = src1 + src2;
-return zero_extend(result, OPSIZE);
+DEST <- SRC1 + SRC2
 ```
+### Flags
+Sets flags according to the result.
 
 ## SUB
 | Mnemonic | Opcode     | Func           | Encoding          | Description                                                   |
@@ -18,8 +19,9 @@ return zero_extend(result, OPSIZE);
 | SUB.W    | `0000 001` | `010`<br>`011` | A-Form<br>AI-Form | Subtract two word-size values, zero extending to 64-bit       |
 | SUB.D    | `0000 001` | `100`<br>`101` | A-Form<br>AI-Form | Subtract two doubleword-size values, zero extending to 64-bit |
 | SUB.Q    | `0000 001` | `110`<br>`111` | A-Form<br>AI-Form | Subtract two quadword-size values, zero extending to 64-bit   |
-### General behavior
+### Operation
 ```
-OPSIZE result = src1 - src2;
-return zero_extend(result, OPSIZE);
+DEST <- SRC1 - SRC2
 ```
+### Flags
+Sets flags according to the result.
