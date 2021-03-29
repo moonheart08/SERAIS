@@ -1,4 +1,12 @@
 # Terminology
+| Word       | Meaning                                                                                |
+|------------|----------------------------------------------------------------------------------------|
+| Byte       | An 8-bit unit of space.                                                                |
+| Word       | Two consecutive bytes interpreted as one 16-bit value.                                 |
+| Doubleword | Two consecutive words interpreted as one 32-bit value.                                 |
+| Quadword   | Two consecutive doublewords interpreted as one 64-bit value.                           |
+| Octaword   | Two consecutive quadwords interpreted as one 128-bit value.                            |
+| PC         | Program Counter register, points to the current instruction in the instruction stream. |
 
 # Register file
 SERAIS provides 32 64-bit integer registers, r0 through r31.
