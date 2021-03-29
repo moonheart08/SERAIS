@@ -85,3 +85,52 @@ Doesn't set flags.
 
 ### Flags
 Doesn't set flags.
+
+
+## ANDN
+| Mnemonic | Opcode     | Func           | Encoding          | Description                    |
+|----------|------------|----------------|-------------------|--------------------------------|
+| ANDN     | `0000 011` | `000`<br>`001` | A-Form<br>AI-Form | Bitwise AND NOT two quadwords. |
+### Operation
+```
+DEST <- SRC1 & ~SRC2
+```
+
+### Flags
+Sets flags according to the result.
+
+## ORN
+| Mnemonic | Opcode     | Func           | Encoding          | Description                    |
+|----------|------------|----------------|-------------------|--------------------------------|
+| ORN      | `0000 011` | `010`<br>`011` | A-Form<br>AI-Form | Bitwise OR NOT two quadwords.  |
+### Operation
+```
+DEST <- SRC1 | ~SRC2
+```
+
+### Flags
+Sets flags according to the result.
+
+## XNOR
+| Mnemonic | Opcode     | Func           | Encoding          | Description                 |
+|----------|------------|----------------|-------------------|-----------------------------|
+| XNOR     | `0000 011` | `100`<br>`101` | A-Form<br>AI-Form | Bitwise XNOR two quadwords. |
+### Operation
+```
+DEST <- ~(SRC1 ^ SRC2)
+```
+
+### Flags
+Sets flags according to the result.
+
+## NOT
+| Mnemonic | Opcode     | Func           | Encoding            | Description             |
+|----------|------------|----------------|---------------------|-------------------------|
+| NOT      | `0000 011` | `110`<br>`111` | UA-Form<br>SUA-Form | Bitwise NOT a quadword. |
+### Operation
+```
+DEST <- ~SRC1
+```
+
+### Flags
+Sets flags according to the result.
