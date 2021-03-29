@@ -75,9 +75,9 @@ DEST <- SRC1
 Doesn't set flags.
 
 ## NOP
-| Mnemonic | Opcode     | Func  | Encoding | Description          |
-|----------|------------|-------|----------|----------------------|
-| NOP      | `0000 010` | `111` | UA-Form  | No operation.        |
+| Mnemonic | Opcode     | Func  | Encoding  | Description          |
+|----------|------------|-------|-----------|----------------------|
+| NOP      | `0000 010` | `111` | SUA-Form  | No operation.        |
 ### Operation
 ```
 (Does nothing.)
