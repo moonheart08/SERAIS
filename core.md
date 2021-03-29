@@ -11,8 +11,33 @@
 # Register file
 SERAIS provides 32 64-bit integer registers, r0 through r31.
 Alongside this, control registers PC, CR0, CR1, CR2, and CR3 are provided. CR0..CR3 are for OS and ABI specified usage, while PC provides a pointer to the currently executing instruction.
+```
++-----------------------------------------------+
+| R0                                            |
++-----------------------------------------------+
+| R1                                            |
+
+                       ...
+
+| R30                                           |
++-----------------------------------------------+
+| R31                                           |
++-----------------------------------------------+
 
 
++-----------------------------------------------+
+| PC                                            |
++-----------------------------------------------+
+| CR0                                           |
++-----------------------------------------------+
+| CR1                                           |
++-----------------------------------------------+
+| CR2                                           |
++-----------------------------------------------+
+| CR3                                           |
++-----------------------------------------------+
+
+```
 
 # Instruction encoding
 All SERAIS instructions match the following format:
@@ -38,4 +63,4 @@ All SERAIS instructions match the following format:
 +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
 
 ```
-Each instruction's LSB is a zero, and an instruction may be one to four words long, where each extension word must have it's LSB as a one. This encoding was chosen to make the middle of an instruction illegal, and to make an all zeros or all ones instruction trivially illegal. Some instructions may permit the absence of one or more words without changing the opcode, this is *only* the case for immediates, where the decoder can trivially fill missing words with zeros.
+Each instruction's LSB is a zero, and an instruction may be one to four words long, where each extension word must have it's LSB as a one. This encoding was chosen to make the middle of an instruction illegal, and to make an all zeros or all ones instruction trivially illegal. Some instructions may permit the absence of one or more words without changing the opcode, this is *only* the case for immediate extensions, where the decoder can trivially fill missing words with zeros or a sign extended value.
