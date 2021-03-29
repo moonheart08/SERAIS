@@ -1,0 +1,62 @@
+   Opcode  | Func  | Length | Format |Description
+-----------|-------|--------|--------|-------------
+0b000_0000 | 0b000 | 2      | A      | ADD.B flags, dest, src1, src2
+0b000_0000 | 0b001 | 2      | AI     | ADD.B flags, dest, src1, imm
+0b000_0000 | 0b010 | 2      | A      | ADD.W flags, dest, src2, src2
+0b000_0000 | 0b011 | 2-3    | AI     | ADD.W flags, dest, src1, imm
+0b000_0000 | 0b100 | 2      | A      | ADD.D flags, dest, src1, src2
+0b000_0000 | 0b101 | 2-4    | AI     | ADD.D flags, dest, src1, imm
+0b000_0000 | 0b110 | 2      | A      | ADD.Q flags, dest, src1, src2
+0b000_0000 | 0b111 | 2-4    | AI     | ADD.Q flags, dest, src1, imm
+-----------|-------|--------|--------|-------------
+0b000_0001 | 0b000 | 2      | A      | SUB.B flags, dest, src1, src2
+0b000_0001 | 0b001 | 2      | AI     | SUB.B flags, dest, src1, imm
+0b000_0001 | 0b010 | 2      | A      | SUB.W flags, dest, src2, src2
+0b000_0001 | 0b011 | 2-3    | AI     | SUB.W flags, dest, src1, imm
+0b000_0001 | 0b100 | 2      | A      | SUB.D flags, dest, src1, src2
+0b000_0001 | 0b101 | 2-4    | AI     | SUB.D flags, dest, src1, imm
+0b000_0001 | 0b110 | 2      | A      | SUB.Q flags, dest, src1, src2
+0b000_0001 | 0b111 | 2-4    | AI     | SUB.Q flags, dest, src1, imm
+-----------|-------|--------|--------|-------------
+0b000_0010 | 0b000 | 2      | A      | AND flags, dest, src1, src2
+0b000_0010 | 0b001 | 2-4    | AI     | AND flags, dest, src1, imm
+-----------|-------|--------|--------|-------------
+0b000_0010 | 0b010 | 2      | A      | OR flags, dest, src1, src2
+0b000_0010 | 0b011 | 2-4    | AI     | OR flags, dest, src1, imm
+-----------|-------|--------|--------|-------------
+0b000_0010 | 0b100 | 2      | A      | XOR flags, dest, src1, src2
+0b000_0010 | 0b101 | 2-4    | AI     | XOR flags, dest, src1, imm
+-----------|-------|--------|--------|-------------
+0b000_0010 | 0b110 | 2      | UA     | MOV dest, src1
+0b000_0010 | 0b111 | 2-4    | SUA    | NOP
+-----------|-------|--------|--------|-------------
+0b000_0011 | 0b000 | 2      | A      | ANDN flags, dest, src1, src2
+0b000_0011 | 0b001 | 2-4    | AI     | ANDN flags, dest, src1, imm
+-----------|-------|--------|--------|-------------
+0b000_0011 | 0b010 | 2      | A      | ORN flags, dest, src1, src2
+0b000_0011 | 0b011 | 2-4    | AI     | ORN flags, dest, src1, imm
+-----------|-------|--------|--------|-------------
+0b000_0011 | 0b100 | 2      | A      | XNOR flags, dest, src1, src2
+0b000_0011 | 0b101 | 2-4    | AI     | XNOR flags, dest, src1, imm
+-----------|-------|--------|--------|-------------
+0b000_0011 | 0b110 | 2      | UA     | NOT dest, src1
+0b000_0011 | 0b111 | 2-4    | SUA    | NOT dest
+-----------|-------|--------|--------|-------------
+0b000_0100 | 0b000 | 2      | AC     | ADC.B fin, fout, dest, src1, src2
+0b000_0100 | 0b001 | 2      | ACI    | ADC.B fin, fout, dest, src1, imm
+0b000_0100 | 0b010 | 2      | AC     | ADC.W fin, fout, dest, src2, src2
+0b000_0100 | 0b011 | 2-3    | ACI    | ADC.W fin, fout, dest, src1, imm
+0b000_0100 | 0b100 | 2      | AC     | ADC.D fin, fout, dest, src1, src2
+0b000_0100 | 0b101 | 2-4    | ACI    | ADC.D fin, fout, dest, src1, imm
+0b000_0100 | 0b110 | 2      | AC     | ADC.Q fin, fout, dest, src1, src2
+0b000_0100 | 0b111 | 2-4    | ACI    | ADC.Q fin, fout, dest, src1, imm
+-----------|-------|--------|--------|-------------
+0b000_0101 | 0b000 | 2      | AC     | SBB.B fin, fout, dest, src1, src2
+0b000_0101 | 0b001 | 2      | ACI    | SBB.B fin, fout, dest, src1, imm
+0b000_0101 | 0b010 | 2      | AC     | SBB.W fin, fout, dest, src2, src2
+0b000_0101 | 0b011 | 2-3    | ACI    | SBB.W fin, fout, dest, src1, imm
+0b000_0101 | 0b100 | 2      | AC     | SBB.D fin, fout, dest, src1, src2
+0b000_0101 | 0b101 | 2-4    | ACI    | SBB.D fin, fout, dest, src1, imm
+0b000_0101 | 0b110 | 2      | AC     | SBB.Q fin, fout, dest, src1, src2
+0b000_0101 | 0b111 | 2-4    | ACI    | SBB.Q fin, fout, dest, src1, imm
+-----------|-------|--------|--------|-------------
