@@ -1,0 +1,53 @@
+CSR 0000 | cpuid0
+0x0123_4567_89AB_CDEF
+  IIII IIII MMMM MMMM
+
+I: 32-bit Model ID
+M: 32-bit Manufacturer ID
+
+CSR 0001 | cpuid1
+0x0123_4567_89AB_CDEF
+  FSG? ???? ???? ????
+F: abcd
+- a: F16 supported
+- b: F32 supported
+- c: F64 supported
+- d: F128 supported
+S: Address space size, (A + 1) * 4
+G: abcd
+- a: Atomics supported
+- b: Locks supported
+- c: RESERVED
+- d: RESERVED
+
+CSR 0002 | cpuid2
+CSR 0003 | cpuid3
+CSR 0004 | cpuid4
+CSR 0005 | cpuid5
+CSR 0006 | cpuid6
+CSR 0007 | cpuid7
+CSR 0008 | cpuid8
+CSR 0009 | cpuid9
+CSR 000A | cpuidA
+CSR 000B | cpuidB
+CSR 000C | cpuidC
+CSR 000D | cpuidD
+CSR 000E | cpuidE
+CSR 000F | cpuidF
+
+CSR 0010 | CR0
+  Context Register 0. Usable as a base register for loads/stores.
+CSR 0011 | CR1
+  Context Register 1.
+CSR 0012 | CR2
+  Context Register 2.
+CSR 0013 | CR3
+  Context Register 3.
+CSR 0014 | CRCFG
+0x0123_4567_89AB_CDEF
+  GHIJ 0000 0000 0000
+G: CR0 privilege control
+H: CR1 privilege control
+I: CR2 privilege control
+J: CR3 privilege control
+
