@@ -66,50 +66,42 @@ UNSORTED
 ; Instructions prefixed with a - are intended for inclusion
 ; Instructions prefixed with a ? are under consideration.
 
-- LD.B dest, [src1]
 - LD.B dest, [src1 + offs]
 - LD.B dest, [src1 + src2]
 - LD.B dest, [src1 + src2 * N]
 - LD.B dest, [src1 + src2 * N + offs]
 
-- LD.W dest, [src1]
 - LD.W dest, [src1 + offs]
 - LD.W dest, [src1 + src2]
 - LD.W dest, [src1 + src2 * N]
 - LD.W dest, [src1 + src2 * N + offs]
 
-- LD.D dest, [src1]
 - LD.D dest, [src1 + offs]
 - LD.D dest, [src1 + src2]
 - LD.D dest, [src1 + src2 * N]
 - LD.D dest, [src1 + src2 * N + offs]
 
-- LD.Q dest, [src1]
 - LD.Q dest, [src1 + offs]
 - LD.Q dest, [src1 + src2]
 - LD.Q dest, [src1 + src2 * N]
 - LD.Q dest, [src1 + src2 * N + offs]
 
 
-- ST.B dest, [src1]
 - ST.B dest, [src1 + offs]
 - ST.B dest, [src1 + src2]
 - ST.B dest, [src1 + src2 * N]
 - ST.B dest, [src1 + src2 * N + offs]
 
-- ST.W dest, [src1]
 - ST.W dest, [src1 + offs]
 - ST.W dest, [src1 + src2]
 - ST.W dest, [src1 + src2 * N]
 - ST.W dest, [src1 + src2 * N + offs]
 
-- ST.D dest, [src1]
 - ST.D dest, [src1 + offs]
 - ST.D dest, [src1 + src2]
 - ST.D dest, [src1 + src2 * N]
 - ST.D dest, [src1 + src2 * N + offs]
 
-- ST.Q dest, [src1]
 - ST.Q dest, [src1 + offs]
 - ST.Q dest, [src1 + src2]
 - ST.Q dest, [src1 + src2 * N]
