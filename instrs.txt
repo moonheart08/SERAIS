@@ -169,14 +169,22 @@ UNSORTED
 - BTS flags, dest, src1, src2
 
 - ZREXT.B flags, dest, src
+- ZREXT.B dest
 - ZREXT.W flags, dest, src
+- ZREXT.W dest
 - ZREXT.D flags, dest, src
+- ZREXT.D dest
 - ZREXT.Q flags, dest, src (ILLEGAL)
+- ZREXT.Q dest (ILLEGAL)
 
 - SIEXT.B flags, dest, src
+- SIEXT.B dest
 - SIEXT.W flags, dest, src
+- SIEXT.W dest
 - SIEXT.D flags, dest, src
+- SIEXT.D dest
 - SIEXT.Q flags, dest, src (ILLEGAL)
+- SIEXT.Q dest (ILLEGAL)
 
 ? PDEP dest, src1, src2
 ? PEXT dest, src1, src2
@@ -205,3 +213,54 @@ UNSORTED
 ? INSR.B dest, src1, src2
 ? INSR.W dest, src1, src2
 ? INSR.D dest, src1, src2
+
+- JMP dest
+- JMP offs
+- JMPR dest
+- JMPR offs
+- Bcc offs
+- BNcc offs
+- CALL link, dest
+- CALL link, offs
+- RET link
+? BDEC src1, offs ; Decrements src1 after branching if not zero
+? Bcc src1, offs
+? Bcc src1, src2, offs
+
+
+UNSORTED SHORT INSTRS
+; The prefix number before each operand indicates the number of bits it has.
+; These are all 16-bit
+; The majority of these need chosen based on what compilers like most!
+
+- ADD.Q 3dest, 3src1
+- ADD.Q 3dest, 3imm
+- SUB.Q 3dest, 3src1
+- SUB.Q 3dest, 3imm
+
+- MUL.Q 3dest, 3src1
+- MUL.Q 3dest, 3imm
+- DIV.Q 3dest, 3src1
+- DIV.Q 3dest, 3imm
+
+
+- AND 3dest, 3src1
+- AND 3dest, 3imm
+- OR 3dest, 3src1
+- OR 3dest, 3imm
+
+- XOR 3dest, 3src1
+- XOR 3dest, 3imm
+- MOV 3dest, 3src1
+- MOV 3dest, 3imm
+
+- ANDN 3dest, 3src1
+- ORN 3dest, 3src1
+- XNOR 3dest, 3src1
+- NOT 3dest, 3src1
+
+
+- SHL 3dest, imm
+- SHR 3dest, imm
+
+
