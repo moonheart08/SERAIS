@@ -117,3 +117,39 @@ ST.Q dest, [src1 + src2 * N + offs]
 - CINCcc flags, dest, src1, src2
 - CNEGcc flags, dest, src1, src2
 
+
+? MUL.B dest, src1, src2
+? MUL.B dest, src1, imm
+? MUL.W dest, src1, src2
+? MUL.W dest, src1, imm
+- MUL.D dest, src1, src2
+- MUL.D dest, src1, imm
+- MUL.Q dest, src1, src2
+- MUL.Q dest, src1, imm
+
+? DIV.B dest, src1, src2
+? DIV.B dest, src1, imm
+? DIV.W dest, src1, src2
+? DIV.W dest, src1, imm
+- DIV.D dest, src1, src2
+- DIV.D dest, src1, imm
+- DIV.Q dest, src1, src2
+- DIV.Q dest, src1, imm
+
+? REM.B dest, src1, src2
+? REM.B dest, src1, imm
+? REM.W dest, src1, src2
+? REM.W dest, src1, imm
+- REM.D dest, src1, src2
+- REM.D dest, src1, imm
+- REM.Q dest, src1, src2
+- REM.Q dest, src1, imm
+
+? DIVREM.B dest1, dest2, src1, src2
+? DIVREM.B dest1, dest2, src1, imm
+? DIVREM.W dest1, dest2, src1, src2
+? DIVREM.W dest1, dest2, src1, imm
+? DIVREM.D dest1, dest2, src1, src2
+? DIVREM.D dest1, dest2, src1, imm
+? DIVREM.Q dest1, dest2, src1, src2
+? DIVREM.Q dest1, dest2, src1, imm
