@@ -28,7 +28,7 @@
 0b000_0010 | 0b101 | 2-4    | AI     | XOR flags, dest, src1, imm
 -----------|-------|--------|--------|-------------
 0b000_0010 | 0b110 | 2      | UA     | MOV dest, src1
-0b000_0010 | 0b111 | 2-4    | SUA    | NOP
+0b000_0010 | 0b111 | 1      | SUA    | PAD
 -----------|-------|--------|--------|-------------
 0b000_0011 | 0b000 | 2      | A      | ANDN flags, dest, src1, src2
 0b000_0011 | 0b001 | 2-4    | AI     | ANDN flags, dest, src1, imm
@@ -40,7 +40,7 @@
 0b000_0011 | 0b101 | 2-4    | AI     | XNOR flags, dest, src1, imm
 -----------|-------|--------|--------|-------------
 0b000_0011 | 0b110 | 2      | UA     | NOT dest, src1
-0b000_0011 | 0b111 | 2-4    | SUA    | NOT dest
+0b000_0011 | 0b111 | 1      | SUA    | NOT dest
 -----------|-------|--------|--------|-------------
 0b000_0100 | 0b000 | 2      | AC     | ADC.B fin, fout, dest, src1, src2
 0b000_0100 | 0b001 | 2      | ACI    | ADC.B fin, fout, dest, src1, imm
@@ -62,60 +62,66 @@
 -----------|-------|--------|--------|-------------
 
 UNSORTED
+; Conventions:
+; Instructions prefixed with a - are intended for inclusion
+; Instructions prefixed with a ? are under consideration.
 
-LD.B dest, [src1]
-LD.B dest, [src1 + offs]
-LD.B dest, [src1 + src2]
-LD.B dest, [src1 + src2 * N]
-LD.B dest, [src1 + src2 * N + offs]
+- LD.B dest, [src1]
+- LD.B dest, [src1 + offs]
+- LD.B dest, [src1 + src2]
+- LD.B dest, [src1 + src2 * N]
+- LD.B dest, [src1 + src2 * N + offs]
 
-LD.W dest, [src1]
-LD.W dest, [src1 + offs]
-LD.W dest, [src1 + src2]
-LD.W dest, [src1 + src2 * N]
-LD.W dest, [src1 + src2 * N + offs]
+- LD.W dest, [src1]
+- LD.W dest, [src1 + offs]
+- LD.W dest, [src1 + src2]
+- LD.W dest, [src1 + src2 * N]
+- LD.W dest, [src1 + src2 * N + offs]
 
-LD.D dest, [src1]
-LD.D dest, [src1 + offs]
-LD.D dest, [src1 + src2]
-LD.D dest, [src1 + src2 * N]
-LD.D dest, [src1 + src2 * N + offs]
+- LD.D dest, [src1]
+- LD.D dest, [src1 + offs]
+- LD.D dest, [src1 + src2]
+- LD.D dest, [src1 + src2 * N]
+- LD.D dest, [src1 + src2 * N + offs]
 
-LD.Q dest, [src1]
-LD.Q dest, [src1 + offs]
-LD.Q dest, [src1 + src2]
-LD.Q dest, [src1 + src2 * N]
-LD.Q dest, [src1 + src2 * N + offs]
+- LD.Q dest, [src1]
+- LD.Q dest, [src1 + offs]
+- LD.Q dest, [src1 + src2]
+- LD.Q dest, [src1 + src2 * N]
+- LD.Q dest, [src1 + src2 * N + offs]
 
 
-ST.B dest, [src1]
-ST.B dest, [src1 + offs]
-ST.B dest, [src1 + src2]
-ST.B dest, [src1 + src2 * N]
-ST.B dest, [src1 + src2 * N + offs]
+- ST.B dest, [src1]
+- ST.B dest, [src1 + offs]
+- ST.B dest, [src1 + src2]
+- ST.B dest, [src1 + src2 * N]
+- ST.B dest, [src1 + src2 * N + offs]
 
-ST.W dest, [src1]
-ST.W dest, [src1 + offs]
-ST.W dest, [src1 + src2]
-ST.W dest, [src1 + src2 * N]
-ST.W dest, [src1 + src2 * N + offs]
+- ST.W dest, [src1]
+- ST.W dest, [src1 + offs]
+- ST.W dest, [src1 + src2]
+- ST.W dest, [src1 + src2 * N]
+- ST.W dest, [src1 + src2 * N + offs]
 
-ST.D dest, [src1]
-ST.D dest, [src1 + offs]
-ST.D dest, [src1 + src2]
-ST.D dest, [src1 + src2 * N]
-ST.D dest, [src1 + src2 * N + offs]
+- ST.D dest, [src1]
+- ST.D dest, [src1 + offs]
+- ST.D dest, [src1 + src2]
+- ST.D dest, [src1 + src2 * N]
+- ST.D dest, [src1 + src2 * N + offs]
 
-ST.Q dest, [src1]
-ST.Q dest, [src1 + offs]
-ST.Q dest, [src1 + src2]
-ST.Q dest, [src1 + src2 * N]
-ST.Q dest, [src1 + src2 * N + offs]
+- ST.Q dest, [src1]
+- ST.Q dest, [src1 + offs]
+- ST.Q dest, [src1 + src2]
+- ST.Q dest, [src1 + src2 * N]
+- ST.Q dest, [src1 + src2 * N + offs]
 
 
 - CSELcc flags, dest, src1, src2
+- CSELcc flags, dest, src1, imm
 - CINCcc flags, dest, src1, src2
+- CINCcc flags, dest, src1, imm
 - CNEGcc flags, dest, src1, src2
+- CNEGcc flags, dest, src1, imm
 
 
 ? MUL.B dest, src1, src2
@@ -153,3 +159,57 @@ ST.Q dest, [src1 + src2 * N + offs]
 ? DIVREM.D dest1, dest2, src1, imm
 ? DIVREM.Q dest1, dest2, src1, src2
 ? DIVREM.Q dest1, dest2, src1, imm
+
+
+- POPCNT dest, src
+- CLO dest, src
+? CLZ dest, src
+- PLO dest, src
+? PLZ dest, src
+- CTO dest, src
+? CTZ dest, src
+- PLO dest, src
+? PLZ dest, src
+
+- BT flags, dest, src1, src2
+- BTC flags, dest, src1, src2
+- BTR flags, dest, src1, src2
+- BTS flags, dest, src1, src2
+
+- ZREXT.B flags, dest, src
+- ZREXT.W flags, dest, src
+- ZREXT.D flags, dest, src
+- ZREXT.Q flags, dest, src (ILLEGAL)
+
+- SIEXT.B flags, dest, src
+- SIEXT.W flags, dest, src
+- SIEXT.D flags, dest, src
+- SIEXT.Q flags, dest, src (ILLEGAL)
+
+- PDEP dest, src1, src2
+- PEXT dest, src1, src2
+
+- ABS dest, src  ; Integer absolute value
+- MAX dest, src1, src2 ; Integer max(), unsigned
+- MAX dest, src1, imm
+- MAXS dest, src1, src2 ; Integer max(), signed
+- MAXS dest, src1, imm
+- MIN dest, src1, src2 ; Integer min(), unsigned
+- MIN dest, src1, imm
+- MINS dest, src1, src2 ; Integer min(), signed
+- MINS dest, src1, imm
+
+? REV.B dest, src
+? REV.W dest, src
+- REV.D dest, src
+- REV.Q dest, src
+
+- BMAK dest, src1, src2, src3
+- BEXT dest, src1, src2, src3
+
+? EXTR.B dest, src1, src2 ; SEE: Propeller 2 SETBYTE and GETBYTE instructions.
+? EXTR.W dest, src1, src2
+? EXTR.D dest, src1, src2
+? INSR.B dest, src1, src2
+? INSR.W dest, src1, src2
+? INSR.D dest, src1, src2
