@@ -60,3 +60,60 @@
 0b000_0101 | 0b110 | 2      | AC     | SBB.Q fin, fout, dest, src1, src2
 0b000_0101 | 0b111 | 2-4    | ACI    | SBB.Q fin, fout, dest, src1, imm
 -----------|-------|--------|--------|-------------
+
+UNSORTED
+
+LD.B dest, [src1]
+LD.B dest, [src1 + offs]
+LD.B dest, [src1 + src2]
+LD.B dest, [src1 + src2 * N]
+LD.B dest, [src1 + src2 * N + offs]
+
+LD.W dest, [src1]
+LD.W dest, [src1 + offs]
+LD.W dest, [src1 + src2]
+LD.W dest, [src1 + src2 * N]
+LD.W dest, [src1 + src2 * N + offs]
+
+LD.D dest, [src1]
+LD.D dest, [src1 + offs]
+LD.D dest, [src1 + src2]
+LD.D dest, [src1 + src2 * N]
+LD.D dest, [src1 + src2 * N + offs]
+
+LD.Q dest, [src1]
+LD.Q dest, [src1 + offs]
+LD.Q dest, [src1 + src2]
+LD.Q dest, [src1 + src2 * N]
+LD.Q dest, [src1 + src2 * N + offs]
+
+
+ST.B dest, [src1]
+ST.B dest, [src1 + offs]
+ST.B dest, [src1 + src2]
+ST.B dest, [src1 + src2 * N]
+ST.B dest, [src1 + src2 * N + offs]
+
+ST.W dest, [src1]
+ST.W dest, [src1 + offs]
+ST.W dest, [src1 + src2]
+ST.W dest, [src1 + src2 * N]
+ST.W dest, [src1 + src2 * N + offs]
+
+ST.D dest, [src1]
+ST.D dest, [src1 + offs]
+ST.D dest, [src1 + src2]
+ST.D dest, [src1 + src2 * N]
+ST.D dest, [src1 + src2 * N + offs]
+
+ST.Q dest, [src1]
+ST.Q dest, [src1 + offs]
+ST.Q dest, [src1 + src2]
+ST.Q dest, [src1 + src2 * N]
+ST.Q dest, [src1 + src2 * N + offs]
+
+
+- CSELcc flags, dest, src1, src2
+- CINCcc flags, dest, src1, src2
+- CNEGcc flags, dest, src1, src2
+
