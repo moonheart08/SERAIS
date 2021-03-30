@@ -178,8 +178,8 @@ UNSORTED
 - SIEXT.D flags, dest, src
 - SIEXT.Q flags, dest, src (ILLEGAL)
 
-- PDEP dest, src1, src2
-- PEXT dest, src1, src2
+? PDEP dest, src1, src2
+? PEXT dest, src1, src2
 
 - ABS dest, src  ; Integer absolute value
 - MAX dest, src1, src2 ; Integer max(), unsigned
