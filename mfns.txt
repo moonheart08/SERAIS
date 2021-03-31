@@ -1,0 +1,24 @@
+NOTATION: Registers followed by a ! (bang) are clobbered, generally to permit a machine function to resume after interrupt. The clobbered value is UNDEFINED unless otherwise specified.
+
+0x0000: TBD
+
+0x0001: MEMCPY(src: x0!, dest: x1!, len: x2!)
+Performs transfer of len bytes from @src to @dest. May not perform optimally if @src and @dest alias.
+Guarenteed to either finish the transfer or fault resumably.
+
+0x0002: MEMSET(fill: x0, dest: x1!, len: x2!)
+Fills an area of len bytes starting at @dest with the byte in fill.
+Guarenteed to either finish the transfer or fault resumably.
+
+0x0003: FIND_BYTE(find: x0, src: x1!, max: x2!) -> ptr: x7
+Finds a byte inside a buffer, looking through at most max bytes, returning a pointer to it. Can be used to implement strlen.
+
+0x0004: FIND_WORD(find: x0, src: x1!, max: x2!) -> ptr: x7
+Finds a word inside a buffer, looking through at most max words, returning a pointer to it.
+
+0x0005: FIND_DWORD(find: x0, src: x1!, max: x2!) -> ptr: x7
+Finds a doubleword inside a buffer, looking through at most max doublewords, returning a pointer to it.
+
+0x0006: FIND_QWORD(find: x0, src: x1!, max: x2!) -> ptr: x7
+Finds a quadword inside a buffer, looking through at most max quadwords, returning a pointer to it.
+
