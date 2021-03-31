@@ -2,12 +2,20 @@
 xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx0
                                                                sssd ddff fooo ooo0 | Short Core Arithmetic
                                           000e errr rrcs sdd1  sssd ddff fooo ooo0 | Core Arithmetic
-0000 0000 iiii iii1? iiii iiii iiii iaa1? iiii iiii iics sdd1  sssd ddff fooo ooo0 | Immediate Core Arithmetic
+0000 000i iiii iii1? iiii iiii iiii iaa1? 0iii iiii iics sdd1  sssd ddff fooo ooo0 | Immediate Core Arithmetic
                                           iiii iiii iiii iii1  dddd dfff fooo ooo0 | Packed Immediate Core Arithmetic
                                                                dddd dfff fooo ooo0 | Short Unary Arithmetic
                                           000e e000 00ss sss1  dddd dfff fooo ooo0 | Unary Arithmetic
 0000 0000 0000 0ii1? iiii iiii iiii iii1? iiii iiii iiii iii1? dddd dfff fooo ooo0 | Immediate Unary Arithmetic
+                     iiii iiii iiii iii1? iiii iiii iiii iii1? dddd diif fooo ooo0 | Packed Immediate Unary Arithmetic
                                                                aaaa aacc ccoo ooo0 | Short Conditional Branch
-                                          aaaa aaaa aaaa aaa1? aaaa aacc ccoo ooo0 | Conditional Branch
+                                          aaml lrrr rrms sdd1  sssd ddff fooo ooo0 | Load/Store [src1 + src2 * A]
+iiii iiii iiii iii1? iiii iiii iaaa aaa1? aaml lrrr rrms sdd1  sssd ddff fooo ooo0 | Load/Store [src1 + src2 * A + imm]
+                                          iiml liii iims sdd1  sssd ddff fooo ooo0 | Load/Store [src1 + imm]
+                     aaaa aaaa aaaa aaa1? aaaa aaaa aaa0 0hh1? aaaa aacc ccoo ooo0 | Conditional Branch
                                           000f frrr rrfs sdd1  sssd ddcc ccoo ooo0 | Conditional Select
                                                                xxxx xxxx 1111 1110 | Hint
+                                                                                   |
+                                          1cmm mrrr rrcs sdd1  sssd ddff fooo ooo0 | Float Arithmetic
+                                          1cmm mc00 00ss sss1  dddd dfff fooo ooo0 | Unary Float Arithmetic
+0000 0000 00ii iii1? iiii iiii iiii iii1? 1cmm miii iics sdd1  sssd ddff fooo ooo0 | Immediate Float Arithmetic (TBD: Immediate bit layout)
