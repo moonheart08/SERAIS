@@ -3,6 +3,7 @@ xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xx
                                                                sssd ddff fooo ooo0 | Short Core Arithmetic
                                           000e errr rrcs sdd1  sssd ddff fooo ooo0 | Core Arithmetic
 0000 000i iiii iii1? iiii iiii iiii iaa1? 0iii iiii iics sdd1  sssd ddff fooo ooo0 | Immediate Core Arithmetic
+                                                               iiid ddff fooo ooo0 | Small Immediate Core Arithmetic
                                           iiii iiii iiii iii1  dddd dfff fooo ooo0 | Packed Immediate Core Arithmetic
                                                                dddd dfff fooo ooo0 | Short Unary Arithmetic
                                           000e e000 00ss sss1  dddd dfff fooo ooo0 | Unary Arithmetic
