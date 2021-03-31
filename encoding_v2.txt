@@ -6,7 +6,7 @@ xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xx
                                           iiii iiii iiii iii1  dddd dfff fooo ooo0 | Packed Immediate Core Arithmetic
                                                                dddd dfff fooo ooo0 | Short Unary Arithmetic
                                           000e e000 00ss sss1  dddd dfff fooo ooo0 | Unary Arithmetic
-               0ii1? iiii iiii iiii iii1? iiii iiii iiii iii1? dddd dfff fooo ooo0 | Immediate Unary Arithmetic
+0000 0000 0000 0ii1? iiii iiii iiii iii1? iiii iiii iiii iii1? dddd dfff fooo ooo0 | Immediate Unary Arithmetic
                                                                aaaa aacc ccoo ooo0 | Short Conditional Branch
                                           aaaa aaaa aaaa aaa1? aaaa aacc ccoo ooo0 | Conditional Branch
                                           000f frrr rrfs sdd1  sssd ddcc ccoo ooo0 | Conditional Select
