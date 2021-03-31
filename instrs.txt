@@ -63,12 +63,29 @@
 0b000_110  | 0b110  | 2      | CA     | ROR.Q dest, src1, src2
 0b000_110  | 0b111  | 2      | ICA    | ROR.Q dest, src1, imm
 -----------|--------|--------|--------|-------------
-0b000_111  | 0b000  | 2      | CA     | RESERVED
-0b000_111  | 0b001  | 2      | ICA    | RESERVED
-0b000_111  | 0b010  | 2      | CA     | RESERVED
-0b000_111  | 0b011  | 2      | ICA    | RESERVED
-0b000_111  | 0b100  | 2      | CA     | RESERVED
-0b000_111  | 0b101  | 2      | ICA    | RESERVED
-0b000_111  | 0b110  | 2      | CA     | RESERVED
-0b000_111  | 0b111  | 2      | ICA    | RESERVED
+0b000_111  | 0b000  | 2      | CA     | ADDS.D dest, src1, src2
+0b000_111  | 0b001  | 2-4    | ICA    | ADDS.D dest, src1, imm
+0b000_111  | 0b010  | 2      | CA     | ADDS.Q dest, src1, src2
+0b000_111  | 0b011  | 2-4    | ICA    | ADDS.Q dest, src1, imm
+0b000_111  | 0b100  | 2      | CA     | SUBS.D dest, src1, src2
+0b000_111  | 0b101  | 2-4    | ICA    | SUBS.D dest, src1, imm
+0b000_111  | 0b110  | 2      | CA     | SUBS.Q dest, src1, src2
+0b000_111  | 0b111  | 2-4    | ICA    | SUBS.Q dest, src1, imm
+-----------|--------|--------|--------|-------------
+0b001_000  | 0b0000 | 2      | PICA   | ADD.D dest, imm
+0b001_000  | 0b0001 | 2      | PICA   | ADD.Q dest, imm
+0b001_000  | 0b0010 | 2      | PICA   | SUB.D dest, imm
+0b001_000  | 0b0011 | 2      | PICA   | SUB.Q dest, imm
+0b001_000  | 0b0100 | 2      | PICA   | SHL.D dest, imm
+0b001_000  | 0b0101 | 2      | PICA   | SHL.Q dest, imm
+0b001_000  | 0b0110 | 2      | PICA   | SHR.D dest, imm
+0b001_000  | 0b0111 | 2      | PICA   | SHR.Q dest, imm
+0b001_000  | 0b1000 | 2      | UA     | NOT.D dest, src
+0b001_000  | 0b1001 | 2      | UA     | NOT.Q dest, src
+0b001_000  | 0b1010 | 2      | UA     | NEG.D dest, src
+0b001_000  | 0b1011 | 2      | UA     | NEG.Q dest, src
+0b001_000  | 0b1100 | 2      | UA     | ABS.D dest, src
+0b001_000  | 0b1101 | 2      | UA     | ABS.Q dest, src
+0b001_000  | 0b1110 | 2      | UA     | MOV.D dest, src
+0b001_000  | 0b1111 | 2      | UA     | MOV.Q dest, src
 -----------|--------|--------|--------|-------------
