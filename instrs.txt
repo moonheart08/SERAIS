@@ -1,266 +1,74 @@
-   Opcode  | Func  | Length | Format |Description
------------|-------|--------|--------|-------------
-0b000_0000 | 0b000 | 2      | A      | ADD.B flags, dest, src1, src2
-0b000_0000 | 0b001 | 2      | AI     | ADD.B flags, dest, src1, imm
-0b000_0000 | 0b010 | 2      | A      | ADD.W flags, dest, src2, src2
-0b000_0000 | 0b011 | 2-3    | AI     | ADD.W flags, dest, src1, imm
-0b000_0000 | 0b100 | 2      | A      | ADD.D flags, dest, src1, src2
-0b000_0000 | 0b101 | 2-4    | AI     | ADD.D flags, dest, src1, imm
-0b000_0000 | 0b110 | 2      | A      | ADD.Q flags, dest, src1, src2
-0b000_0000 | 0b111 | 2-4    | AI     | ADD.Q flags, dest, src1, imm
------------|-------|--------|--------|-------------
-0b000_0001 | 0b000 | 2      | A      | SUB.B flags, dest, src1, src2
-0b000_0001 | 0b001 | 2      | AI     | SUB.B flags, dest, src1, imm
-0b000_0001 | 0b010 | 2      | A      | SUB.W flags, dest, src2, src2
-0b000_0001 | 0b011 | 2-3    | AI     | SUB.W flags, dest, src1, imm
-0b000_0001 | 0b100 | 2      | A      | SUB.D flags, dest, src1, src2
-0b000_0001 | 0b101 | 2-4    | AI     | SUB.D flags, dest, src1, imm
-0b000_0001 | 0b110 | 2      | A      | SUB.Q flags, dest, src1, src2
-0b000_0001 | 0b111 | 2-4    | AI     | SUB.Q flags, dest, src1, imm
------------|-------|--------|--------|-------------
-0b000_0010 | 0b000 | 2      | A      | AND flags, dest, src1, src2
-0b000_0010 | 0b001 | 2-4    | AI     | AND flags, dest, src1, imm
------------|-------|--------|--------|-------------
-0b000_0010 | 0b010 | 2      | A      | OR flags, dest, src1, src2
-0b000_0010 | 0b011 | 2-4    | AI     | OR flags, dest, src1, imm
------------|-------|--------|--------|-------------
-0b000_0010 | 0b100 | 2      | A      | XOR flags, dest, src1, src2
-0b000_0010 | 0b101 | 2-4    | AI     | XOR flags, dest, src1, imm
------------|-------|--------|--------|-------------
-0b000_0010 | 0b110 | 2      | UA     | MOV dest, src1
-0b000_0010 | 0b111 | 1      | SUA    | PAD
------------|-------|--------|--------|-------------
-0b000_0011 | 0b000 | 2      | A      | ANDN flags, dest, src1, src2
-0b000_0011 | 0b001 | 2-4    | AI     | ANDN flags, dest, src1, imm
------------|-------|--------|--------|-------------
-0b000_0011 | 0b010 | 2      | A      | ORN flags, dest, src1, src2
-0b000_0011 | 0b011 | 2-4    | AI     | ORN flags, dest, src1, imm
------------|-------|--------|--------|-------------
-0b000_0011 | 0b100 | 2      | A      | XNOR flags, dest, src1, src2
-0b000_0011 | 0b101 | 2-4    | AI     | XNOR flags, dest, src1, imm
------------|-------|--------|--------|-------------
-0b000_0011 | 0b110 | 2      | UA     | NOT dest, src1
-0b000_0011 | 0b111 | 1      | SUA    | NOT dest
------------|-------|--------|--------|-------------
-0b000_0100 | 0b000 | 2      | AC     | ADC.B fin, fout, dest, src1, src2
-0b000_0100 | 0b001 | 2      | ACI    | ADC.B fin, fout, dest, src1, imm
-0b000_0100 | 0b010 | 2      | AC     | ADC.W fin, fout, dest, src2, src2
-0b000_0100 | 0b011 | 2-3    | ACI    | ADC.W fin, fout, dest, src1, imm
-0b000_0100 | 0b100 | 2      | AC     | ADC.D fin, fout, dest, src1, src2
-0b000_0100 | 0b101 | 2-4    | ACI    | ADC.D fin, fout, dest, src1, imm
-0b000_0100 | 0b110 | 2      | AC     | ADC.Q fin, fout, dest, src1, src2
-0b000_0100 | 0b111 | 2-4    | ACI    | ADC.Q fin, fout, dest, src1, imm
------------|-------|--------|--------|-------------
-0b000_0101 | 0b000 | 2      | AC     | SBB.B fin, fout, dest, src1, src2
-0b000_0101 | 0b001 | 2      | ACI    | SBB.B fin, fout, dest, src1, imm
-0b000_0101 | 0b010 | 2      | AC     | SBB.W fin, fout, dest, src2, src2
-0b000_0101 | 0b011 | 2-3    | ACI    | SBB.W fin, fout, dest, src1, imm
-0b000_0101 | 0b100 | 2      | AC     | SBB.D fin, fout, dest, src1, src2
-0b000_0101 | 0b101 | 2-4    | ACI    | SBB.D fin, fout, dest, src1, imm
-0b000_0101 | 0b110 | 2      | AC     | SBB.Q fin, fout, dest, src1, src2
-0b000_0101 | 0b111 | 2-4    | ACI    | SBB.Q fin, fout, dest, src1, imm
------------|-------|--------|--------|-------------
-
-UNSORTED
-; Conventions:
-; Instructions prefixed with a - are intended for inclusion
-; Instructions prefixed with a ? are under consideration.
-
-- LD.B dest, [src1 + offs]
-- LD.B dest, [src1 + src2]
-- LD.B dest, [src1 + src2 * N]
-- LD.B dest, [src1 + src2 * N + offs]
-
-- LD.W dest, [src1 + offs]
-- LD.W dest, [src1 + src2]
-- LD.W dest, [src1 + src2 * N]
-- LD.W dest, [src1 + src2 * N + offs]
-
-- LD.D dest, [src1 + offs]
-- LD.D dest, [src1 + src2]
-- LD.D dest, [src1 + src2 * N]
-- LD.D dest, [src1 + src2 * N + offs]
-
-- LD.Q dest, [src1 + offs]
-- LD.Q dest, [src1 + src2]
-- LD.Q dest, [src1 + src2 * N]
-- LD.Q dest, [src1 + src2 * N + offs]
-
-
-- ST.B dest, [src1 + offs]
-- ST.B dest, [src1 + src2]
-- ST.B dest, [src1 + src2 * N]
-- ST.B dest, [src1 + src2 * N + offs]
-
-- ST.W dest, [src1 + offs]
-- ST.W dest, [src1 + src2]
-- ST.W dest, [src1 + src2 * N]
-- ST.W dest, [src1 + src2 * N + offs]
-
-- ST.D dest, [src1 + offs]
-- ST.D dest, [src1 + src2]
-- ST.D dest, [src1 + src2 * N]
-- ST.D dest, [src1 + src2 * N + offs]
-
-- ST.Q dest, [src1 + offs]
-- ST.Q dest, [src1 + src2]
-- ST.Q dest, [src1 + src2 * N]
-- ST.Q dest, [src1 + src2 * N + offs]
-
-
-- CSELcc flags, dest, src1, src2
-- CSELcc flags, dest, src1, imm
-- CINCcc flags, dest, src1, src2
-- CINCcc flags, dest, src1, imm
-- CNEGcc flags, dest, src1, src2
-- CNEGcc flags, dest, src1, imm
-
-
-? MUL.B dest, src1, src2
-? MUL.B dest, src1, imm
-? MUL.W dest, src1, src2
-? MUL.W dest, src1, imm
-- MUL.D dest, src1, src2
-- MUL.D dest, src1, imm
-- MUL.Q dest, src1, src2
-- MUL.Q dest, src1, imm
-
-? DIV.B dest, src1, src2
-? DIV.B dest, src1, imm
-? DIV.W dest, src1, src2
-? DIV.W dest, src1, imm
-- DIV.D dest, src1, src2
-- DIV.D dest, src1, imm
-- DIV.Q dest, src1, src2
-- DIV.Q dest, src1, imm
-
-? REM.B dest, src1, src2
-? REM.B dest, src1, imm
-? REM.W dest, src1, src2
-? REM.W dest, src1, imm
-- REM.D dest, src1, src2
-- REM.D dest, src1, imm
-- REM.Q dest, src1, src2
-- REM.Q dest, src1, imm
-
-? DIVREM.B dest1, dest2, src1, src2
-? DIVREM.B dest1, dest2, src1, imm
-? DIVREM.W dest1, dest2, src1, src2
-? DIVREM.W dest1, dest2, src1, imm
-? DIVREM.D dest1, dest2, src1, src2
-? DIVREM.D dest1, dest2, src1, imm
-? DIVREM.Q dest1, dest2, src1, src2
-? DIVREM.Q dest1, dest2, src1, imm
-
-
-- POPCNT dest, src
-- CLO dest, src
-? CLZ dest, src
-- PLO dest, src
-? PLZ dest, src
-- CTO dest, src
-? CTZ dest, src
-- PLO dest, src
-? PLZ dest, src
-
-- BT flags, dest, src1, src2
-- BTC flags, dest, src1, src2
-- BTR flags, dest, src1, src2
-- BTS flags, dest, src1, src2
-
-- ZREXT.B flags, dest, src
-- ZREXT.B dest
-- ZREXT.W flags, dest, src
-- ZREXT.W dest
-- ZREXT.D flags, dest, src
-- ZREXT.D dest
-- ZREXT.Q flags, dest, src (ILLEGAL)
-- ZREXT.Q dest (ILLEGAL)
-
-- SIEXT.B flags, dest, src
-- SIEXT.B dest
-- SIEXT.W flags, dest, src
-- SIEXT.W dest
-- SIEXT.D flags, dest, src
-- SIEXT.D dest
-- SIEXT.Q flags, dest, src (ILLEGAL)
-- SIEXT.Q dest (ILLEGAL)
-
-? PDEP dest, src1, src2
-? PEXT dest, src1, src2
-
-- ABS dest, src  ; Integer absolute value
-- MAX dest, src1, src2 ; Integer max(), unsigned
-- MAX dest, src1, imm
-- MAXS dest, src1, src2 ; Integer max(), signed
-- MAXS dest, src1, imm
-- MIN dest, src1, src2 ; Integer min(), unsigned
-- MIN dest, src1, imm
-- MINS dest, src1, src2 ; Integer min(), signed
-- MINS dest, src1, imm
-
-? REV.B dest, src
-? REV.W dest, src
-- REV.D dest, src
-- REV.Q dest, src
-
-- BMAK dest, src1, src2, src3
-- BEXT dest, src1, src2, src3
-
-? EXTR.B dest, src1, src2 ; SEE: Propeller 2 SETBYTE and GETBYTE instructions.
-? EXTR.W dest, src1, src2
-? EXTR.D dest, src1, src2
-? INSR.B dest, src1, src2
-? INSR.W dest, src1, src2
-? INSR.D dest, src1, src2
-
-- JMP dest
-- JMP offs
-- JMPR dest
-- JMPR offs
-- Bcc offs
-- BNcc offs
-- CALL link, dest
-- CALL link, offs
-- RET link
-? BDEC src1, offs ; Decrements src1 after branching if not zero
-? Bcc src1, offs
-? Bcc src1, src2, offs
-
-
-UNSORTED SHORT INSTRS
-; The prefix number before each operand indicates the number of bits it has.
-; These are all 16-bit
-; The majority of these need chosen based on what compilers like most!
-
-- ADD.Q 3dest, 3src1
-- ADD.Q 3dest, 3imm
-- SUB.Q 3dest, 3src1
-- SUB.Q 3dest, 3imm
-
-- MUL.Q 3dest, 3src1
-- MUL.Q 3dest, 3imm
-- DIV.Q 3dest, 3src1
-- DIV.Q 3dest, 3imm
-
-
-- AND 3dest, 3src1
-- AND 3dest, 3imm
-- OR 3dest, 3src1
-- OR 3dest, 3imm
-
-- XOR 3dest, 3src1
-- XOR 3dest, 3imm
-- MOV 3dest, 3src1
-- MOV 3dest, 3imm
-
-- ANDN 3dest, 3src1
-- ORN 3dest, 3src1
-- XNOR 3dest, 3src1
-- NOT 3dest, 3src1
-
-
-- SHL 3dest, imm
-- SHR 3dest, imm
-
-
+   Opcode  | Func   | Length | Format |Description
+-----------|--------|--------|--------|-------------
+0b000_000  | 0b000  | 2      | CA     | ADD.D dest, src1, src2
+0b000_000  | 0b001  | 2-4    | ICA    | ADD.D dest, src1, imm
+0b000_000  | 0b010  | 2      | CA     | ADD.Q dest, src1, src2
+0b000_000  | 0b011  | 2-4    | ICA    | ADD.Q dest, src1, imm
+0b000_000  | 0b100  | 2      | CA     | SUB.D dest, src1, src2
+0b000_000  | 0b101  | 2-4    | ICA    | SUB.D dest, src1, imm
+0b000_000  | 0b110  | 2      | CA     | SUB.Q dest, src1, src2
+0b000_000  | 0b111  | 2-4    | ICA    | SUB.Q dest, src1, imm
+-----------|--------|--------|--------|-------------
+0b000_001  | 0b000  | 2      | CA     | AND.D dest, src1, src2
+0b000_001  | 0b001  | 2-4    | ICA    | AND.D dest, src1, imm
+0b000_001  | 0b010  | 2      | CA     | AND.Q dest, src1, src2
+0b000_001  | 0b011  | 2-4    | ICA    | AND.Q dest, src1, imm
+0b000_001  | 0b100  | 2      | CA     | OR.D dest, src1, src2
+0b000_001  | 0b101  | 2-4    | ICA    | OR.D dest, src1, imm
+0b000_001  | 0b110  | 2      | CA     | OR.Q dest, src1, src2
+0b000_001  | 0b111  | 2-4    | ICA    | OR.Q dest, src1, imm
+-----------|--------|--------|--------|-------------
+0b000_010  | 0b000  | 2      | CA     | XOR.D dest, src1, src2
+0b000_010  | 0b001  | 2-4    | ICA    | XOR.D dest, src1, imm
+0b000_010  | 0b010  | 2      | CA     | XOR.Q dest, src1, src2
+0b000_010  | 0b011  | 2-4    | ICA    | XOR.Q dest, src1, imm
+0b000_010  | 0b100  | 2      | CA     | ANDN.D dest, src1, src2
+0b000_010  | 0b101  | 2-4    | ICA    | ANDN.D dest, src1, imm
+0b000_010  | 0b110  | 2      | CA     | ANDN.Q dest, src1, src2
+0b000_010  | 0b111  | 2-4    | ICA    | ANDN.Q dest, src1, imm
+-----------|--------|--------|--------|-------------
+0b000_011  | 0b000  | 2      | CA     | MUL.D dest, src1, src2
+0b000_011  | 0b001  | 2-4    | ICA    | MUL.D dest, src1, imm
+0b000_011  | 0b010  | 2      | CA     | MUL.Q dest, src1, src2
+0b000_011  | 0b011  | 2-4    | ICA    | MUL.Q dest, src1, imm
+0b000_011  | 0b100  | 2      | CA     | DIV.D dest, src1, src2
+0b000_011  | 0b101  | 2-4    | ICA    | DIV.D dest, src1, imm
+0b000_011  | 0b110  | 2      | CA     | DIV.Q dest, src1, src2
+0b000_011  | 0b111  | 2-4    | ICA    | DIV.Q dest, src1, imm
+-----------|--------|--------|--------|-------------
+0b000_100  | 0b000  | 2      | CA     | REM.D dest, src1, src2
+0b000_100  | 0b001  | 2-4    | ICA    | REM.D dest, src1, imm
+0b000_100  | 0b010  | 2      | CA     | REM.Q dest, src1, src2
+0b000_100  | 0b011  | 2-4    | ICA    | REM.Q dest, src1, imm
+0b000_100  | 0b100  | 2      | ?      | RESERVED
+0b000_100  | 0b101  | 2-4    | ?      | RESERVED
+0b000_100  | 0b110  | 2      | ?      | RESERVED
+0b000_100  | 0b111  | 2-4    | ?      | RESERVED
+-----------|--------|--------|--------|-------------
+0b000_101  | 0b000  | 2      | CA     | SHL.D dest, src1, src2
+0b000_101  | 0b001  | 2      | ICA    | SHL.D dest, src1, imm
+0b000_101  | 0b010  | 2      | CA     | SHL.Q dest, src1, src2
+0b000_101  | 0b011  | 2      | ICA    | SHL.Q dest, src1, imm
+0b000_101  | 0b100  | 2      | CA     | SHR.D dest, src1, src2
+0b000_101  | 0b101  | 2      | ICA    | SHR.D dest, src1, imm
+0b000_101  | 0b110  | 2      | CA     | SHR.Q dest, src1, src2
+0b000_101  | 0b111  | 2      | ICA    | SHR.Q dest, src1, imm
+-----------|--------|--------|--------|-------------
+0b000_110  | 0b000  | 2      | CA     | ROL.D dest, src1, src2
+0b000_110  | 0b001  | 2      | ICA    | ROL.D dest, src1, imm
+0b000_110  | 0b010  | 2      | CA     | ROL.Q dest, src1, src2
+0b000_110  | 0b011  | 2      | ICA    | ROL.Q dest, src1, imm
+0b000_110  | 0b100  | 2      | CA     | ROR.D dest, src1, src2
+0b000_110  | 0b101  | 2      | ICA    | ROR.D dest, src1, imm
+0b000_110  | 0b110  | 2      | CA     | ROR.Q dest, src1, src2
+0b000_110  | 0b111  | 2      | ICA    | ROR.Q dest, src1, imm
+-----------|--------|--------|--------|-------------
+0b000_111  | 0b000  | 2      | CA     | RESERVED
+0b000_111  | 0b001  | 2      | ICA    | RESERVED
+0b000_111  | 0b010  | 2      | CA     | RESERVED
+0b000_111  | 0b011  | 2      | ICA    | RESERVED
+0b000_111  | 0b100  | 2      | CA     | RESERVED
+0b000_111  | 0b101  | 2      | ICA    | RESERVED
+0b000_111  | 0b110  | 2      | CA     | RESERVED
+0b000_111  | 0b111  | 2      | ICA    | RESERVED
+-----------|--------|--------|--------|-------------
