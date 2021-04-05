@@ -6,9 +6,12 @@ xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xx
                      0000 0000 00qq qqq1? 000e errr rrcs sdd1  sssd ddff fooo ooo0 | Core Fused Arithmetic
                                                                iiid ddff fooo ooo0 | Small Immediate Core Arithmetic
                                           iiii iiii iiii iii1  dddd dfff fooo ooo0 | Packed Immediate Core Arithmetic
-                                                               sssd dfff fooo ooo0 | Short Unary Arithmetic
-                                          000e e000 00ds sdd1  sssd dfff fooo ooo0 | Unary Arithmetic
-                     iiii iiii iiii iii1? iiii iiii iiii idd1? iiid dfff fooo ooo0 | Immediate Unary Arithmetic
+                                                               dddd dfff fooo ooo0 | Short Unary Arithmetic
+                                          000e e000 00ss sss1  dddd dfff fooo ooo0 | Unary Arithmetic
+                     iiii iiii iiii iii1? iiii iiii iiii idd1? iidd dfff fooo ooo0 | Immediate Unary Arithmetic
+                                                               sssd ddff fooo ooo0 | Alternate Short Unary Arithmetic
+                                          000e e000 000s sdd1  sssd ddff fooo ooo0 | Alternate Unary Arithmetic
+                     iiii iiii iiii iii1? iiii iiii iiii idd1? iiid ddff fooo ooo0 | Immediate Alternate Unary Arithmetic
 0000 0000 iiii iii1? iiii iiii iiii iii1? iiim miii iics sdd1  sssd ddff fooo ooo0 | Load/Store 1 [src1 + imm]
                                                                sssd ddff fooo ooo0 | Short Load/Store 1 [src1]
                                           aaam mrrr rrcs sdd1  sssd ddff fooo ooo0 | Load/Store 2 [src1 + src2 * A]
