@@ -282,3 +282,4 @@
 0b100_000  | 0b1110 | 1-2    | UA     | JMPR src1
 0b100_000  | 0b1111 | 1-2    | IUA    | JMPR imm
 -----------|--------|--------|--------|-------------
+0b100_001  | RESERVED (For hinting call and ret instructions)
