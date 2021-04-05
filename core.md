@@ -9,7 +9,7 @@
 | PC         | Program Counter register, points to the current instruction in the instruction stream. |
 
 # Register file
-SERAIS provides 32 64-bit integer registers, r0 through r31.
+SERAIS provides 31 64-bit integer registers, labeled r0 through r30. Alongside this, integer register 31, r31, is hardwired to zero.
 Alongside this, control registers PC, CR0, CR1, CR2, and CR3 are provided. CR0..CR3 are for OS and ABI specified usage, while PC provides a pointer to the currently executing instruction.
 An additional four registers are provided for flags, one of which (Q3) is hardwired to 0x00.
 ```
@@ -22,7 +22,7 @@ An additional four registers are provided for flags, one of which (Q3) is hardwi
 
 | R30                                           |
 +-----------------------------------------------+
-| R31                                           |
+| R31 (0)                                       |
 +-----------------------------------------------+
 
 
