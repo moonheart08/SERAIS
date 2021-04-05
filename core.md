@@ -11,7 +11,6 @@
 # Register file
 SERAIS provides 31 64-bit integer registers, labeled r0 through r30. Alongside this, integer register 31, r31, is hardwired to zero.
 Alongside this, control registers PC, CR0, CR1, CR2, and CR3 are provided. CR0..CR3 are for OS and ABI specified usage, while PC provides a pointer to the currently executing instruction.
-An additional four registers are provided for flags, one of which (Q3) is hardwired to 0x00.
 ```
 +-----------------------------------------------+
 | R0                                            |
@@ -37,17 +36,6 @@ An additional four registers are provided for flags, one of which (Q3) is hardwi
 +-----------------------------------------------+
 | CR3                                           |
 +-----------------------------------------------+
-
-+----------------------+
-| Q0                   |
-+----------------------+
-| Q1                   |
-+----------------------+
-| Q2                   |
-+----------------------+
-| Q3      0x00         |
-+----------------------+
-
 ```
 
 # Instruction encoding
