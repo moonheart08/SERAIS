@@ -62,4 +62,4 @@ All SERAIS instructions match the following format:
 +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
 
 ```
-Each instruction's LSB is a zero, and an instruction may be one to four words long, where each extension word must have it's LSB as a one. This encoding was chosen to make the middle of an instruction illegal, and to make an all zeros or all ones instruction trivially illegal. Some instructions may permit the absence of one or more words without changing the opcode, this is *only* the case for immediate extensions, where the decoder can trivially fill missing words with zeros or a sign extended value.
+Each instruction's LSB is a zero, and an instruction may be one to four words long, where each extension word must have it's LSB as a one. This encoding was chosen to make the middle of an instruction illegal, and to make an all zeros or all ones instruction trivially illegal. Some instructions may permit the absence of one or more words without changing the opcode, resulting in a shorter, more limited form of the instruction.
