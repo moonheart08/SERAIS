@@ -56,3 +56,37 @@ DEST <- SRC1 ^ SRC2
 ```
 DEST <- SRC1 & ~SRC2
 ```
+
+## MUL
+| Mnemonic | Opcode     | Func           | Encoding            | Description                                              |
+|----------|------------|----------------|---------------------|----------------------------------------------------------|
+| MUL.D    | `000 011`  | `000`<br>`001` | CA-Form<br>ICA-Form | Multiply two doubleword-size values, zero extending to 64-bit |
+| MUL.Q    | `000 011`  | `010`<br>`011` | CA-Form<br>ICA-Form | Multiply two quadword-size values, zero extending to 64-bit   |
+### Operation
+```
+DEST <- SRC1 * SRC2
+```
+
+## DIV
+| Mnemonic | Opcode     | Func           | Encoding            | Description                                              |
+|----------|------------|----------------|---------------------|----------------------------------------------------------|
+| DIV.D    | `000 011`  | `100`<br>`101` | CA-Form<br>ICA-Form | Divide two doubleword-size values, zero extending to 64-bit |
+| DIV.Q    | `000 011`  | `110`<br>`111` | CA-Form<br>ICA-Form | Divide two quadword-size values, zero extending to 64-bit   |
+### Operation
+```
+DEST <- SRC1 / SRC2
+```
+### Exceptions
+When SRC2 is zero, [TBD].
+
+## REM
+| Mnemonic | Opcode     | Func           | Encoding            | Description                                              |
+|----------|------------|----------------|---------------------|----------------------------------------------------------|
+| REM.D    | `000 100`  | `000`<br>`001` | CA-Form<br>ICA-Form | Calculate remainder of two doubleword-size values, zero extending to 64-bit |
+| REM.Q    | `000 100`  | `010`<br>`011` | CA-Form<br>ICA-Form | Calculate remainder of two quadword-size values, zero extending to 64-bit   |
+### Operation
+```
+DEST <- SRC1 % SRC2
+```
+### Exceptions
+When SRC2 is zero, [TBD].
