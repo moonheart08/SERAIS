@@ -10,10 +10,10 @@ xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xx
 0000 0000 0000 0ii1? iiii iiii iiii iii1? iiii iiii iiii iii1? dddd dfff fooo ooo0 | Immediate Unary Arithmetic
                      iiii iiii iiii iii1? iiii iiii iiii iii1? dddd diif fooo ooo0 | Packed Immediate Unary Arithmetic
                                                                aaaa aacc ccoo ooo0 | Short Conditional Branch
-                                          aaam mrrr rrcs sdd1  sssd ddff fooo ooo0 | Load/Store [src1 + src2 * A]
-iiii iiii iiii iii1? iiii iiii iaaa aaa1? aaam mrrr rrcs sdd1  sssd ddff fooo ooo0 | Load/Store [src1 + src2 * A + imm]
-0000 0000 iiii iii1? iiii iiii iiii iii1? iiim miii iics sdd1  sssd ddff fooo ooo0 | Load/Store [src1 + imm]
-                                                               sssd ddff fooo ooo0 | Short Load/Store [src1]
+0000 0000 iiii iii1? iiii iiii iiii iii1? iiim miii iics sdd1  sssd ddff fooo ooo0 | Load/Store 1 [src1 + imm]
+                                          aaam mrrr rrcs sdd1  sssd ddff fooo ooo0 | Load/Store 2 [src1 + src2 * A]
+iiii iiii iiii iii1? iiii iiii iaaa aaa1? aaam mrrr rrcs sdd1  sssd ddff fooo ooo0 | Load/Store 3 [src1 + src2 * A + imm]
+                                                               sssd ddff fooo ooo0 | Short Load/Store 1 [src1]
                      aaaa aaaa aaaa aaa1? aaaa aaaa aaa0 0hh1? aaaa aacc ccoo ooo0 | Conditional Branch
                                           000f frrr rrfs sdd1  sssd ddcc ccoo ooo0 | Conditional Select
                                                                sssd ddcc ccoo ooo0 | Short Conditional Move
