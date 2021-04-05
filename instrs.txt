@@ -246,6 +246,7 @@
 0b011_110  | 0b1100 | 1-2    | UFA    | RESERVED
 0b011_110  | 0b1101 | 2-4    | IUFA   | RESERVED
 0b011_110  | 0b1110 | 1-2    | UFA    | RESERVED
+0b011_110  | 0b1111 | 2-4    | IUFA   | RESERVED
 -----------|--------|--------|--------|-------------
 0b011_111  | 0b0000 | 2      | PICA   | LDMSRM.Q dest, msr
 0b011_111  | 0b0001 | 2      | PICA   | STMSRM.Q dest, msr
@@ -264,4 +265,4 @@
 0b011_111  | 0b1110 | 2      | PICA   | LDMSRU.D dest, msr
 0b011_111  | 0b1111 | 2      | PICA   | STMSRU.D dest, msr
 -----------|--------|--------|--------|-------------
-0b011_110  | 0b1111 | 2-4    | IUFA   | FCMPS.D fsrc1, imm
+
