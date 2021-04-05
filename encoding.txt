@@ -12,6 +12,7 @@ xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xx
 0000 0000 iiii iii1? iiii iiii iiii iii1? iiim miii iics sdd1  sssd ddff fooo ooo0 | Load/Store 1 [src1 + imm]
                                                                sssd ddff fooo ooo0 | Short Load/Store 1 [src1]
                                           aaam mrrr rrcs sdd1  sssd ddff fooo ooo0 | Load/Store 2 [src1 + src2 * A]
+                                                               sssd ddff fooo ooo0 | Short Load/Store 2 [dest + src2 * Access size]
 iiii iiii iiii iii1? iiii iiii iaaa aaa1? aaam mrrr rrcs sdd1  sssd ddff fooo ooo0 | Extended Load/Store 2 [src1 + src2 * A + imm]
                      aaaa aaaa aaaa aaa1? aaaa aaaa aaa0 0hh1? aaaa aacc ccoo ooo0 | Conditional Branch
                                                                aaaa aacc ccoo ooo0 | Short Conditional Branch
@@ -21,6 +22,6 @@ iiii iiii iiii iii1? iiii iiii iaaa aaa1? aaam mrrr rrcs sdd1  sssd ddff fooo oo
                                                                iiid ddcc ccoo ooo0 | Short Conditional Move Immediate
                                                                xxxx xxxx 1111 1110 | Hint
                                                                                    |
-                                          1cmm mrrr rrcs sdd1  sssd ddff fooo ooo0 | Float Arithmetic
-                                          1cmm mc00 00ss sss1  dddd dfff fooo ooo0 | Unary Float Arithmetic
-0000 0000 00ii iii1? iiii iiii iiii iii1? 1cmm miii iics sdd1  sssd ddff fooo ooo0 | Immediate Float Arithmetic (TBD: Immediate bit layout)
+                                          0cmm mrrr rrcs sdd1  sssd ddff fooo ooo0 | Float Arithmetic
+                                          0cmm mc00 00ss sss1  dddd dfff fooo ooo0 | Unary Float Arithmetic
+0000 0000 00ii iii1? iiii iiii iiii iii1? 0cmm miii iics sdd1  sssd ddff fooo ooo0 | Immediate Float Arithmetic (TBD: Immediate bit layout)
