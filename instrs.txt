@@ -1,76 +1,76 @@
    Opcode  | Func   | Length | Format |Description
 -----------|--------|--------|--------|-------------
-0b000_000  | 0b000  | 2      | CA     | ADD.D dest, src1, src2
-0b000_000  | 0b001  | 2-4    | ICA    | ADD.D dest, src1, imm
-0b000_000  | 0b010  | 2      | CA     | ADD.Q dest, src1, src2
-0b000_000  | 0b011  | 2-4    | ICA    | ADD.Q dest, src1, imm
-0b000_000  | 0b100  | 2      | CA     | SUB.D dest, src1, src2
-0b000_000  | 0b101  | 2-4    | ICA    | SUB.D dest, src1, imm
-0b000_000  | 0b110  | 2      | CA     | SUB.Q dest, src1, src2
-0b000_000  | 0b111  | 2-4    | ICA    | SUB.Q dest, src1, imm
+0b000_000  | 0b000  | 1-2    | CA     | ADD.D dest, src1, src2
+0b000_000  | 0b001  | 1-4    | ICA    | ADD.D dest, src1, imm
+0b000_000  | 0b010  | 1-2    | CA     | ADD.Q dest, src1, src2
+0b000_000  | 0b011  | 1-4    | ICA    | ADD.Q dest, src1, imm
+0b000_000  | 0b100  | 1-2    | CA     | SUB.D dest, src1, src2
+0b000_000  | 0b101  | 1-4    | ICA    | SUB.D dest, src1, imm
+0b000_000  | 0b110  | 1-2    | CA     | SUB.Q dest, src1, src2
+0b000_000  | 0b111  | 1-4    | ICA    | SUB.Q dest, src1, imm
 -----------|--------|--------|--------|-------------
-0b000_001  | 0b000  | 2      | CA     | AND.D dest, src1, src2
-0b000_001  | 0b001  | 2-4    | ICA    | AND.D dest, src1, imm
-0b000_001  | 0b010  | 2      | CA     | AND.Q dest, src1, src2
-0b000_001  | 0b011  | 2-4    | ICA    | AND.Q dest, src1, imm
-0b000_001  | 0b100  | 2      | CA     | OR.D dest, src1, src2
-0b000_001  | 0b101  | 2-4    | ICA    | OR.D dest, src1, imm
-0b000_001  | 0b110  | 2      | CA     | OR.Q dest, src1, src2
-0b000_001  | 0b111  | 2-4    | ICA    | OR.Q dest, src1, imm
+0b000_001  | 0b000  | 1-2    | CA     | AND.D dest, src1, src2
+0b000_001  | 0b001  | 1-4    | ICA    | AND.D dest, src1, imm
+0b000_001  | 0b010  | 1-2    | CA     | AND.Q dest, src1, src2
+0b000_001  | 0b011  | 1-4    | ICA    | AND.Q dest, src1, imm
+0b000_001  | 0b100  | 1-2    | CA     | OR.D dest, src1, src2
+0b000_001  | 0b101  | 1-4    | ICA    | OR.D dest, src1, imm
+0b000_001  | 0b110  | 1-2    | CA     | OR.Q dest, src1, src2
+0b000_001  | 0b111  | 1-4    | ICA    | OR.Q dest, src1, imm
 -----------|--------|--------|--------|-------------
-0b000_010  | 0b000  | 2      | CA     | XOR.D dest, src1, src2
-0b000_010  | 0b001  | 2-4    | ICA    | XOR.D dest, src1, imm
-0b000_010  | 0b010  | 2      | CA     | XOR.Q dest, src1, src2
-0b000_010  | 0b011  | 2-4    | ICA    | XOR.Q dest, src1, imm
-0b000_010  | 0b100  | 2      | CA     | ANDN.D dest, src1, src2
-0b000_010  | 0b101  | 2-4    | ICA    | ANDN.D dest, src1, imm
-0b000_010  | 0b110  | 2      | CA     | ANDN.Q dest, src1, src2
-0b000_010  | 0b111  | 2-4    | ICA    | ANDN.Q dest, src1, imm
+0b000_010  | 0b000  | 1-2    | CA     | XOR.D dest, src1, src2
+0b000_010  | 0b001  | 1-4    | ICA    | XOR.D dest, src1, imm
+0b000_010  | 0b010  | 1-2    | CA     | XOR.Q dest, src1, src2
+0b000_010  | 0b011  | 1-4    | ICA    | XOR.Q dest, src1, imm
+0b000_010  | 0b100  | 1-2    | CA     | ANDN.D dest, src1, src2
+0b000_010  | 0b101  | 1-4    | ICA    | ANDN.D dest, src1, imm
+0b000_010  | 0b110  | 1-2    | CA     | ANDN.Q dest, src1, src2
+0b000_010  | 0b111  | 1-4    | ICA    | ANDN.Q dest, src1, imm
 -----------|--------|--------|--------|-------------
-0b000_011  | 0b000  | 2      | CA     | MUL.D dest, src1, src2
-0b000_011  | 0b001  | 2-4    | ICA    | MUL.D dest, src1, imm
-0b000_011  | 0b010  | 2      | CA     | MUL.Q dest, src1, src2
-0b000_011  | 0b011  | 2-4    | ICA    | MUL.Q dest, src1, imm
-0b000_011  | 0b100  | 2      | CA     | DIV.D dest, src1, src2
-0b000_011  | 0b101  | 2-4    | ICA    | DIV.D dest, src1, imm
-0b000_011  | 0b110  | 2      | CA     | DIV.Q dest, src1, src2
-0b000_011  | 0b111  | 2-4    | ICA    | DIV.Q dest, src1, imm
+0b000_011  | 0b000  | 1-2    | CA     | MUL.D dest, src1, src2
+0b000_011  | 0b001  | 1-4    | ICA    | MUL.D dest, src1, imm
+0b000_011  | 0b010  | 1-2    | CA     | MUL.Q dest, src1, src2
+0b000_011  | 0b011  | 1-4    | ICA    | MUL.Q dest, src1, imm
+0b000_011  | 0b100  | 1-2    | CA     | DIV.D dest, src1, src2
+0b000_011  | 0b101  | 1-4    | ICA    | DIV.D dest, src1, imm
+0b000_011  | 0b110  | 1-2    | CA     | DIV.Q dest, src1, src2
+0b000_011  | 0b111  | 1-4    | ICA    | DIV.Q dest, src1, imm
 -----------|--------|--------|--------|-------------
-0b000_100  | 0b000  | 2      | CA     | REM.D dest, src1, src2
-0b000_100  | 0b001  | 2-4    | ICA    | REM.D dest, src1, imm
-0b000_100  | 0b010  | 2      | CA     | REM.Q dest, src1, src2
-0b000_100  | 0b011  | 2-4    | ICA    | REM.Q dest, src1, imm
-0b000_100  | 0b100  | 2      | ?      | RESERVED
-0b000_100  | 0b101  | 2-4    | ?      | RESERVED
-0b000_100  | 0b110  | 2      | ?      | RESERVED
-0b000_100  | 0b111  | 2-4    | ?      | RESERVED
+0b000_100  | 0b000  | 1-2    | CA     | REM.D dest, src1, src2
+0b000_100  | 0b001  | 1-4    | ICA    | REM.D dest, src1, imm
+0b000_100  | 0b010  | 1-2    | CA     | REM.Q dest, src1, src2
+0b000_100  | 0b011  | 1-4    | ICA    | REM.Q dest, src1, imm
+0b000_100  | 0b100  | 1-2    | ?      | RESERVED
+0b000_100  | 0b101  | 1-4    | ?      | RESERVED
+0b000_100  | 0b110  | 1-2    | ?      | RESERVED
+0b000_100  | 0b111  | 1-4    | ?      | RESERVED
 -----------|--------|--------|--------|-------------
-0b000_101  | 0b000  | 2      | CA     | SHL.D dest, src1, src2
-0b000_101  | 0b001  | 2      | ICA    | SHL.D dest, src1, imm
-0b000_101  | 0b010  | 2      | CA     | SHL.Q dest, src1, src2
-0b000_101  | 0b011  | 2      | ICA    | SHL.Q dest, src1, imm
-0b000_101  | 0b100  | 2      | CA     | SHR.D dest, src1, src2
-0b000_101  | 0b101  | 2      | ICA    | SHR.D dest, src1, imm
-0b000_101  | 0b110  | 2      | CA     | SHR.Q dest, src1, src2
-0b000_101  | 0b111  | 2      | ICA    | SHR.Q dest, src1, imm
+0b000_101  | 0b000  | 1-2    | CA     | SHL.D dest, src1, src2
+0b000_101  | 0b001  | 1-2    | ICA    | SHL.D dest, src1, imm
+0b000_101  | 0b010  | 1-2    | CA     | SHL.Q dest, src1, src2
+0b000_101  | 0b011  | 1-2    | ICA    | SHL.Q dest, src1, imm
+0b000_101  | 0b100  | 1-2    | CA     | SHR.D dest, src1, src2
+0b000_101  | 0b101  | 1-2    | ICA    | SHR.D dest, src1, imm
+0b000_101  | 0b110  | 1-2    | CA     | SHR.Q dest, src1, src2
+0b000_101  | 0b111  | 1-2    | ICA    | SHR.Q dest, src1, imm
 -----------|--------|--------|--------|-------------
-0b000_110  | 0b000  | 2      | CA     | ROL.D dest, src1, src2
-0b000_110  | 0b001  | 2      | ICA    | ROL.D dest, src1, imm
-0b000_110  | 0b010  | 2      | CA     | ROL.Q dest, src1, src2
-0b000_110  | 0b011  | 2      | ICA    | ROL.Q dest, src1, imm
-0b000_110  | 0b100  | 2      | CA     | ROR.D dest, src1, src2
-0b000_110  | 0b101  | 2      | ICA    | ROR.D dest, src1, imm
-0b000_110  | 0b110  | 2      | CA     | ROR.Q dest, src1, src2
-0b000_110  | 0b111  | 2      | ICA    | ROR.Q dest, src1, imm
+0b000_110  | 0b000  | 1-2    | CA     | ROL.D dest, src1, src2
+0b000_110  | 0b001  | 1-2    | ICA    | ROL.D dest, src1, imm
+0b000_110  | 0b010  | 1-2    | CA     | ROL.Q dest, src1, src2
+0b000_110  | 0b011  | 1-2    | ICA    | ROL.Q dest, src1, imm
+0b000_110  | 0b100  | 1-2    | CA     | ROR.D dest, src1, src2
+0b000_110  | 0b101  | 1-2    | ICA    | ROR.D dest, src1, imm
+0b000_110  | 0b110  | 1-2    | CA     | ROR.Q dest, src1, src2
+0b000_110  | 0b111  | 1-2    | ICA    | ROR.Q dest, src1, imm
 -----------|--------|--------|--------|-------------
-0b000_111  | 0b000  | 2      | CA     | ADDS.D dest, src1, src2
-0b000_111  | 0b001  | 2-4    | ICA    | ADDS.D dest, src1, imm
-0b000_111  | 0b010  | 2      | CA     | ADDS.Q dest, src1, src2
-0b000_111  | 0b011  | 2-4    | ICA    | ADDS.Q dest, src1, imm
-0b000_111  | 0b100  | 2      | CA     | SUBS.D dest, src1, src2
-0b000_111  | 0b101  | 2-4    | ICA    | SUBS.D dest, src1, imm
-0b000_111  | 0b110  | 2      | CA     | SUBS.Q dest, src1, src2
-0b000_111  | 0b111  | 2-4    | ICA    | SUBS.Q dest, src1, imm
+0b000_111  | 0b000  | 1-2    | CA     | ADDS.D dest, src1, src2
+0b000_111  | 0b001  | 1-4    | ICA    | ADDS.D dest, src1, imm
+0b000_111  | 0b010  | 1-2    | CA     | ADDS.Q dest, src1, src2
+0b000_111  | 0b011  | 1-4    | ICA    | ADDS.Q dest, src1, imm
+0b000_111  | 0b100  | 1-2    | CA     | SUBS.D dest, src1, src2
+0b000_111  | 0b101  | 1-4    | ICA    | SUBS.D dest, src1, imm
+0b000_111  | 0b110  | 1-2    | CA     | SUBS.Q dest, src1, src2
+0b000_111  | 0b111  | 1-4    | ICA    | SUBS.Q dest, src1, imm
 -----------|--------|--------|--------|-------------
 0b001_000  | 0b0000 | 2      | PICA   | ADD.D dest, imm
 0b001_000  | 0b0001 | 2      | PICA   | ADD.Q dest, imm
@@ -80,86 +80,119 @@
 0b001_000  | 0b0101 | 2      | PICA   | SHL.Q dest, imm
 0b001_000  | 0b0110 | 2      | PICA   | SHR.D dest, imm
 0b001_000  | 0b0111 | 2      | PICA   | SHR.Q dest, imm
-0b001_000  | 0b1000 | 2      | UA     | NOT.D dest, src
-0b001_000  | 0b1001 | 2      | UA     | NOT.Q dest, src
-0b001_000  | 0b1010 | 2      | UA     | NEG.D dest, src
-0b001_000  | 0b1011 | 2      | UA     | NEG.Q dest, src
-0b001_000  | 0b1100 | 2      | UA     | ABS.D dest, src
-0b001_000  | 0b1101 | 2      | UA     | ABS.Q dest, src
-0b001_000  | 0b1110 | 2      | UA     | MOV.D dest, src
-0b001_000  | 0b1111 | 2      | UA     | MOV.Q dest, src
+0b001_000  | 0b1000 | 1-2    | UA     | NOT.D dest, src
+0b001_000  | 0b1001 | 1-2    | UA     | NOT.Q dest, src
+0b001_000  | 0b1010 | 1-2    | UA     | NEG.D dest, src
+0b001_000  | 0b1011 | 1-2    | UA     | NEG.Q dest, src
+0b001_000  | 0b1100 | 1-2    | UA     | ABS.D dest, src
+0b001_000  | 0b1101 | 1-2    | UA     | ABS.Q dest, src
+0b001_000  | 0b1110 | 1-2    | UA     | MOV.D dest, src
+0b001_000  | 0b1111 | 1-2    | UA     | MOV.Q dest, src
 -----------|--------|--------|--------|-------------
-...
+0b001_001  |        | 1-4    | CB     | BRcc offs
+0b001_010  |        | 1-4    | CB     | BRUcc offs
+0b001_011  |        | 1-4    | CB     | BRLcc offs
+0b001_100  |        | 1-4    | CS     | SELcc dest, src1, src2
+0b001_101  |        | 1-4    | CS     | SELcc dest, imm, src2
+0b001_110  |        | 1-4    | CS     | SINCcc dest, src1, src2
+0b001_111  |        | 1-4    | CS     | SINCcc dest, imm, src2
 -----------|--------|--------|--------|-------------
-0b010_000  | 0b000  | 2-4    | LS1    | LD.Q dest, [src1 + imm]
-0b010_000  | 0b001  | 2-4    | LS1    | ST.Q dest, [src1 + imm]
-0b010_000  | 0b010  | 2-4    | LS2    | LD.Q dest, [src1 + src2 * A]
-0b010_000  | 0b011  | 2-4    | LS2    | ST.Q dest, [src1 + src2 * A]
-0b010_000  | 0b100  | 2-4    | LS1    | LD.D dest, [src1 + imm]
-0b010_000  | 0b101  | 2-4    | LS1    | ST.D dest, [src1 + imm]
-0b010_000  | 0b110  | 2-4    | LS2    | LD.D dest, [src1 + src2 * A]
-0b010_000  | 0b111  | 2-4    | LS2    | ST.D dest, [src1 + src2 * A]
+0b010_000  | 0b000  | 1-4    | LS1    | LD.Q dest, [src1 + imm]
+0b010_000  | 0b001  | 1-4    | LS1    | ST.Q dest, [src1 + imm]
+0b010_000  | 0b010  | 1-4    | LS2    | LD.Q dest, [src1 + src2 * A]
+0b010_000  | 0b011  | 1-4    | LS2    | ST.Q dest, [src1 + src2 * A]
+0b010_000  | 0b100  | 1-4    | LS1    | LD.D dest, [src1 + imm]
+0b010_000  | 0b101  | 1-4    | LS1    | ST.D dest, [src1 + imm]
+0b010_000  | 0b110  | 1-4    | LS2    | LD.D dest, [src1 + src2 * A]
+0b010_000  | 0b111  | 1-4    | LS2    | ST.D dest, [src1 + src2 * A]
 -----------|--------|--------|--------|-------------
-0b010_001  | 0b000  | 2-4    | LS1    | LD.W dest, [src1 + imm]
-0b010_001  | 0b001  | 2-4    | LS1    | ST.W dest, [src1 + imm]
-0b010_001  | 0b010  | 2-4    | LS2    | LD.W dest, [src1 + src2 * A]
-0b010_001  | 0b011  | 2-4    | LS2    | ST.W dest, [src1 + src2 * A]
-0b010_001  | 0b100  | 2-4    | LS1    | LD.B dest, [src1 + imm]
-0b010_001  | 0b101  | 2-4    | LS1    | ST.B dest, [src1 + imm]
-0b010_001  | 0b110  | 2-4    | LS2    | LD.B dest, [src1 + src2 * A]
-0b010_001  | 0b111  | 2-4    | LS2    | ST.B dest, [src1 + src2 * A]
+0b010_001  | 0b000  | 1-4    | LS1    | LD.W dest, [src1 + imm]
+0b010_001  | 0b001  | 1-4    | LS1    | ST.W dest, [src1 + imm]
+0b010_001  | 0b010  | 1-4    | LS2    | LD.W dest, [src1 + src2 * A]
+0b010_001  | 0b011  | 1-4    | LS2    | ST.W dest, [src1 + src2 * A]
+0b010_001  | 0b100  | 1-4    | LS1    | LD.B dest, [src1 + imm]
+0b010_001  | 0b101  | 1-4    | LS1    | ST.B dest, [src1 + imm]
+0b010_001  | 0b110  | 1-4    | LS2    | LD.B dest, [src1 + src2 * A]
+0b010_001  | 0b111  | 1-4    | LS2    | ST.B dest, [src1 + src2 * A]
 -----------|--------|--------|--------|-------------
-0b010_010  | 0b000  | 2-4    | LS1    | LDNT.Q dest, [src1 + imm]
-0b010_010  | 0b001  | 2-4    | LS1    | STNT.Q dest, [src1 + imm]
-0b010_010  | 0b010  | 2-4    | LS2    | LDNT.Q dest, [src1 + src2 * A]
-0b010_010  | 0b011  | 2-4    | LS2    | STNT.Q dest, [src1 + src2 * A]
-0b010_010  | 0b100  | 2-4    | LS1    | LDNT.D dest, [src1 + imm]
-0b010_010  | 0b101  | 2-4    | LS1    | STNT.D dest, [src1 + imm]
-0b010_010  | 0b110  | 2-4    | LS2    | LDNT.D dest, [src1 + src2 * A]
-0b010_010  | 0b111  | 2-4    | LS2    | STNT.D dest, [src1 + src2 * A]
+0b010_010  | 0b000  | 1-4    | LS1    | LDNT.Q dest, [src1 + imm]
+0b010_010  | 0b001  | 1-4    | LS1    | STNT.Q dest, [src1 + imm]
+0b010_010  | 0b010  | 1-4    | LS2    | LDNT.Q dest, [src1 + src2 * A]
+0b010_010  | 0b011  | 1-4    | LS2    | STNT.Q dest, [src1 + src2 * A]
+0b010_010  | 0b100  | 1-4    | LS1    | LDNT.D dest, [src1 + imm]
+0b010_010  | 0b101  | 1-4    | LS1    | STNT.D dest, [src1 + imm]
+0b010_010  | 0b110  | 1-4    | LS2    | LDNT.D dest, [src1 + src2 * A]
+0b010_010  | 0b111  | 1-4    | LS2    | STNT.D dest, [src1 + src2 * A]
 -----------|--------|--------|--------|-------------
-0b010_011  | 0b000  | 2-4    | LS1    | LDNT.W dest, [src1 + imm]
-0b010_011  | 0b001  | 2-4    | LS1    | STNT.W dest, [src1 + imm]
-0b010_011  | 0b010  | 2-4    | LS2    | LDNT.W dest, [src1 + src2 * A]
-0b010_011  | 0b011  | 2-4    | LS2    | STNT.W dest, [src1 + src2 * A]
-0b010_011  | 0b100  | 2-4    | LS1    | LDNT.B dest, [src1 + imm]
-0b010_011  | 0b101  | 2-4    | LS1    | STNT.B dest, [src1 + imm]
-0b010_011  | 0b110  | 2-4    | LS2    | LDNT.B dest, [src1 + src2 * A]
-0b010_011  | 0b111  | 2-4    | LS2    | STNT.B dest, [src1 + src2 * A]
+0b010_011  | 0b000  | 1-4    | LS1    | LDNT.W dest, [src1 + imm]
+0b010_011  | 0b001  | 1-4    | LS1    | STNT.W dest, [src1 + imm]
+0b010_011  | 0b010  | 1-4    | LS2    | LDNT.W dest, [src1 + src2 * A]
+0b010_011  | 0b011  | 1-4    | LS2    | STNT.W dest, [src1 + src2 * A]
+0b010_011  | 0b100  | 1-4    | LS1    | LDNT.B dest, [src1 + imm]
+0b010_011  | 0b101  | 1-4    | LS1    | STNT.B dest, [src1 + imm]
+0b010_011  | 0b110  | 1-4    | LS2    | LDNT.B dest, [src1 + src2 * A]
+0b010_011  | 0b111  | 1-4    | LS2    | STNT.B dest, [src1 + src2 * A]
 -----------|--------|--------|--------|-------------
-0b010_100  | 0b000  | 2-4    | LS1    | RESERVED LD.O fdest, [src1 + imm]
-0b010_100  | 0b001  | 2-4    | LS1    | RESERVED ST.O fdest, [src1 + imm]
-0b010_100  | 0b010  | 2-4    | LS2    | RESERVED LD.O fdest, [src1 + src2 * A]
-0b010_100  | 0b011  | 2-4    | LS2    | RESERVED ST.O fdest, [src1 + src2 * A]
-0b010_100  | 0b100  | 2-4    | LS1    | LD.Q fdest, [src1 + imm]
-0b010_100  | 0b101  | 2-4    | LS1    | ST.Q fdest, [src1 + imm]
-0b010_100  | 0b110  | 2-4    | LS2    | LD.Q fdest, [src1 + src2 * A]
-0b010_100  | 0b111  | 2-4    | LS2    | ST.Q fdest, [src1 + src2 * A]
+0b010_100  | 0b000  | 1-4    | LS1    | RESERVED LD.O fdest, [src1 + imm]
+0b010_100  | 0b001  | 1-4    | LS1    | RESERVED ST.O fdest, [src1 + imm]
+0b010_100  | 0b010  | 1-4    | LS2    | RESERVED LD.O fdest, [src1 + src2 * A]
+0b010_100  | 0b011  | 1-4    | LS2    | RESERVED ST.O fdest, [src1 + src2 * A]
+0b010_100  | 0b100  | 1-4    | LS1    | LD.Q fdest, [src1 + imm]
+0b010_100  | 0b101  | 1-4    | LS1    | ST.Q fdest, [src1 + imm]
+0b010_100  | 0b110  | 1-4    | LS2    | LD.Q fdest, [src1 + src2 * A]
+0b010_100  | 0b111  | 1-4    | LS2    | ST.Q fdest, [src1 + src2 * A]
 -----------|--------|--------|--------|-------------
-0b010_101  | 0b000  | 2-4    | LS1    | LD.D dest, [src1 + imm]
-0b010_101  | 0b001  | 2-4    | LS1    | ST.D dest, [src1 + imm]
-0b010_101  | 0b010  | 2-4    | LS2    | LD.D dest, [src1 + src2 * A]
-0b010_101  | 0b011  | 2-4    | LS2    | ST.D dest, [src1 + src2 * A]
-0b010_101  | 0b100  | 2-4    | LS1    | RESERVED LD.W dest, [src1 + imm]
-0b010_101  | 0b101  | 2-4    | LS1    | RESERVED ST.W dest, [src1 + imm]
-0b010_101  | 0b110  | 2-4    | LS2    | RESERVED LD.W dest, [src1 + src2 * A]
-0b010_101  | 0b111  | 2-4    | LS2    | RESERVED ST.W dest, [src1 + src2 * A]
+0b010_101  | 0b000  | 1-4    | LS1    | LD.D dest, [src1 + imm]
+0b010_101  | 0b001  | 1-4    | LS1    | ST.D dest, [src1 + imm]
+0b010_101  | 0b010  | 1-4    | LS2    | LD.D dest, [src1 + src2 * A]
+0b010_101  | 0b011  | 1-4    | LS2    | ST.D dest, [src1 + src2 * A]
+0b010_101  | 0b100  | 1-4    | LS1    | RESERVED LD.W dest, [src1 + imm]
+0b010_101  | 0b101  | 1-4    | LS1    | RESERVED ST.W dest, [src1 + imm]
+0b010_101  | 0b110  | 1-4    | LS2    | RESERVED LD.W dest, [src1 + src2 * A]
+0b010_101  | 0b111  | 1-4    | LS2    | RESERVED ST.W dest, [src1 + src2 * A]
 -----------|--------|--------|--------|-------------
-0b010_110  | 0b000  | 2-4    | LS1    | RESERVED LDNT.O fdest, [src1 + imm]
-0b010_110  | 0b001  | 2-4    | LS1    | RESERVED STNT.O fdest, [src1 + imm]
-0b010_110  | 0b010  | 2-4    | LS2    | RESERVED LDNT.O fdest, [src1 + src2 * A]
-0b010_110  | 0b011  | 2-4    | LS2    | RESERVED STNT.O fdest, [src1 + src2 * A]
-0b010_110  | 0b100  | 2-4    | LS1    | LDNT.Q fdest, [src1 + imm]
-0b010_110  | 0b101  | 2-4    | LS1    | STNT.Q fdest, [src1 + imm]
-0b010_110  | 0b110  | 2-4    | LS2    | LDNT.Q fdest, [src1 + src2 * A]
-0b010_110  | 0b111  | 2-4    | LS2    | STNT.Q fdest, [src1 + src2 * A]
+0b010_110  | 0b000  | 1-4    | LS1    | RESERVED LDNT.O fdest, [src1 + imm]
+0b010_110  | 0b001  | 1-4    | LS1    | RESERVED STNT.O fdest, [src1 + imm]
+0b010_110  | 0b010  | 1-4    | LS2    | RESERVED LDNT.O fdest, [src1 + src2 * A]
+0b010_110  | 0b011  | 1-4    | LS2    | RESERVED STNT.O fdest, [src1 + src2 * A]
+0b010_110  | 0b100  | 1-4    | LS1    | LDNT.Q fdest, [src1 + imm]
+0b010_110  | 0b101  | 1-4    | LS1    | STNT.Q fdest, [src1 + imm]
+0b010_110  | 0b110  | 1-4    | LS2    | LDNT.Q fdest, [src1 + src2 * A]
+0b010_110  | 0b111  | 1-4    | LS2    | STNT.Q fdest, [src1 + src2 * A]
 -----------|--------|--------|--------|-------------
-0b010_111  | 0b000  | 2-4    | LS1    | LDNT.D dest, [src1 + imm]
-0b010_111  | 0b001  | 2-4    | LS1    | STNT.D dest, [src1 + imm]
-0b010_111  | 0b010  | 2-4    | LS2    | LDNT.D dest, [src1 + src2 * A]
-0b010_111  | 0b011  | 2-4    | LS2    | STNT.D dest, [src1 + src2 * A]
-0b010_111  | 0b100  | 2-4    | LS1    | RESERVED LDNT.W dest, [src1 + imm]
-0b010_111  | 0b101  | 2-4    | LS1    | RESERVED STNT.W dest, [src1 + imm]
-0b010_111  | 0b110  | 2-4    | LS2    | RESERVED LDNT.W dest, [src1 + src2 * A]
-0b010_111  | 0b111  | 2-4    | LS2    | RESERVED STNT.W dest, [src1 + src2 * A]
+0b010_111  | 0b000  | 1-4    | LS1    | LDNT.D dest, [src1 + imm]
+0b010_111  | 0b001  | 1-4    | LS1    | STNT.D dest, [src1 + imm]
+0b010_111  | 0b010  | 1-4    | LS2    | LDNT.D dest, [src1 + src2 * A]
+0b010_111  | 0b011  | 1-4    | LS2    | STNT.D dest, [src1 + src2 * A]
+0b010_111  | 0b100  | 1-4    | LS1    | RESERVED LDNT.W dest, [src1 + imm]
+0b010_111  | 0b101  | 1-4    | LS1    | RESERVED STNT.W dest, [src1 + imm]
+0b010_111  | 0b110  | 1-4    | LS2    | RESERVED LDNT.W dest, [src1 + src2 * A]
+0b010_111  | 0b111  | 1-4    | LS2    | RESERVED STNT.W dest, [src1 + src2 * A]
+-----------|--------|--------|--------|-------------
+0b011_000  | 0b000  | 1-4    | FA     | FADD.Q fdest, fsrc1, fsrc2
+0b011_000  | 0b001  | 1-4    | IFA    | FADD.Q fdest, fsrc1, imm
+0b011_000  | 0b010  | 1-4    | FA     | FADD.D fdest, fsrc1, fsrc2
+0b011_000  | 0b011  | 1-4    | IFA    | FADD.D fdest, fsrc1, imm
+0b011_000  | 0b100  | 1-4    | FA     | FSUB.Q fdest, fsrc1, fsrc2
+0b011_000  | 0b101  | 1-4    | IFA    | FSUB.Q fdest, fsrc1, imm
+0b011_000  | 0b110  | 1-4    | FA     | FSUB.D fdest, fsrc1, fsrc2
+0b011_000  | 0b111  | 1-4    | IFA    | FSUB.D fdest, fsrc1, imm
+-----------|--------|--------|--------|-------------
+0b011_001  | 0b000  | 1-4    | FA     | FMIN.Q fdest, fsrc1, fsrc2
+0b011_001  | 0b001  | 1-4    | IFA    | FMIN.Q fdest, fsrc1, imm
+0b011_001  | 0b010  | 1-4    | FA     | FMIN.D fdest, fsrc1, fsrc2
+0b011_001  | 0b011  | 1-4    | IFA    | FMIN.D fdest, fsrc1, imm
+0b011_001  | 0b100  | 1-4    | FA     | FMAX.Q fdest, fsrc1, fsrc2
+0b011_001  | 0b101  | 1-4    | IFA    | FMAX.Q fdest, fsrc1, imm
+0b011_001  | 0b110  | 1-4    | FA     | FMAX.D fdest, fsrc1, fsrc2
+0b011_001  | 0b111  | 1-4    | IFA    | FMAX.D fdest, fsrc1, imm
+-----------|--------|--------|--------|-------------
+0b011_010  | 0b000  | 1-4    | FA     | FCEIL.Q fdest, fsrc1, fsrc2
+0b011_010  | 0b001  | 1-4    | IFA    | FCEIL.Q fdest, fsrc1, imm
+0b011_010  | 0b010  | 1-4    | FA     | FCEIL.D fdest, fsrc1, fsrc2
+0b011_010  | 0b011  | 1-4    | IFA    | FCEIL.D fdest, fsrc1, imm
+0b011_010  | 0b100  | 1-4    | FA     | FFLOOR.Q fdest, fsrc1, fsrc2
+0b011_010  | 0b101  | 1-4    | IFA    | FFLOOR.Q fdest, fsrc1, imm
+0b011_010  | 0b110  | 1-4    | FA     | FFLOOR.D fdest, fsrc1, fsrc2
+0b011_010  | 0b111  | 1-4    | IFA    | FFLOOR.D fdest, fsrc1, imm
 -----------|--------|--------|--------|-------------
