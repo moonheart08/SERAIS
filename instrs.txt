@@ -273,4 +273,12 @@
 0b100_000  | 0b0101 | 1-2    | IUA    | BTC src1, imm
 0b100_000  | 0b0110 | 1-2    | UA     | BTS src1, src2
 0b100_000  | 0b0111 | 1-2    | IUA    | BTS src1, imm
-
+0b100_000  | 0b1000 | 1-2    | UA     | JAL dest, src1
+0b100_000  | 0b1001 | 1-2    | IUA    | JAL dest, imm
+0b100_000  | 0b1010 | 1-2    | UA     | JALR dest, src1
+0b100_000  | 0b1011 | 1-2    | IUA    | JALR dest, imm
+0b100_000  | 0b1100 | 1-2    | UA     | JMP src1
+0b100_000  | 0b1101 | 1-2    | IUA    | JMP imm
+0b100_000  | 0b1110 | 1-2    | UA     | JMPR src1
+0b100_000  | 0b1111 | 1-2    | IUA    | JMPR imm
+-----------|--------|--------|--------|-------------
