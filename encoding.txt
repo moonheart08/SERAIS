@@ -26,7 +26,7 @@ iiii iiii iiii iii1? iiii iiii iaaa aaa1? aaam mrrr rrcs sdd1  sssd ddff fooo oo
                                                                iiid dccc cooo ooo0 | Short Conditional Move Immediate
                                                                xxxx xxxx 1111 1110 | Hint
                                                                0000 ffff fooo ooo0 | Expansion Root 1
-                                          0mms srrr rrs  ssd1  dddd ffff fooo ooo0 | Privileged Activity
+                                          0mms srrr rrss ssd1  dddd ffff fooo ooo0 | Privileged Activity
                                                                                    |
                                           0cmm mrrr rrcs sdd1  sssd ddff fooo ooo0 | Float Arithmetic
                                           0cmm mc00 00ss sss1  dddd dfff fooo ooo0 | Unary Float Arithmetic
