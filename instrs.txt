@@ -293,3 +293,19 @@
 0b100_010  | 0b110  | 1-2    | AUA    | MOV fdest, fsrc1
 0b100_010  | 0b111  | 1-2    | IAUA   | MOV fdest, fimm
 -----------|--------|--------|--------|-------------
+0b100_011  | b00000 | 2      | PA     | LD.m dest, [src1]
+0b100_011  | b00001 | 2      | PA     | ST.m dest, [src1]
+0b100_011  | b00010 | 2      | PA     | LDACC.m dest, [src1]
+0b100_011  | b00011 | 2      | PA     | RESERVED
+0b100_011  | b00100 | 2      | PA     | RETP.m
+0b100_011  | b00101 | 2      | PA     | SYSCALL.m src1, src2, src3
+0b100_011  | b00110 | 2      | PA     | TRAP.m
+0b100_011  | b00111 | 2      | PA     | BRKP
+0b100_011  | b01xxx | 2      | PA     | RESERVED
+0b100_011  | b1xxxx | 2      | PA     | RESERVED
+-----------|--------|--------|--------|-------------
+0b100_1xx  |                          | TODO, all sorts of odds and ends.
+-----------|--------|--------|--------|-------------
+0b101_xxx  |                          | RESERVED; Vector/SIMD extension
+-----------|--------|--------|--------|-------------
+0b11x_xxx  |                          | RESERVED; Future expansion
