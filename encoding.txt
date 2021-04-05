@@ -15,8 +15,10 @@ xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xx
 iiii iiii iiii iii1? iiii iiii iaaa aaa1? aaam mrrr rrcs sdd1  sssd ddff fooo ooo0 | Extended Load/Store 2 [src1 + src2 * A + imm]
                      aaaa aaaa aaaa aaa1? aaaa aaaa aaa0 0hh1? aaaa aacc ccoo ooo0 | Conditional Branch
                                                                aaaa aacc ccoo ooo0 | Short Conditional Branch
-                                          000f frrr rrfs sdd1  sssd ddcc ccoo ooo0 | Conditional Select
+                                          0000 0rrr rr0s sdd1  sssd ddcc ccoo ooo0 | Conditional Select
                                                                sssd ddcc ccoo ooo0 | Short Conditional Move
+0000 0000 00ii iii1? iiii iiii iiii iii1? iiii irrr rrii idd1  iiid ddcc ccoo ooo0 | Conditional Select Immediate
+                                                               iiid ddcc ccoo ooo0 | Short Conditional Move Immediate
                                                                xxxx xxxx 1111 1110 | Hint
                                                                                    |
                                           1cmm mrrr rrcs sdd1  sssd ddff fooo ooo0 | Float Arithmetic
