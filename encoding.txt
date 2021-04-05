@@ -16,6 +16,7 @@ xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xx
                                                                sssd ddff fooo ooo0 | Short Load/Store 1 [src1]
                                           aaam mrrr rrcs sdd1  sssd ddff fooo ooo0 | Load/Store 2 [src1 + src2 * A]
                                                                sssd ddff fooo ooo0 | Short Load/Store 2 [dest + src2 * Access size]
+                                                               
 iiii iiii iiii iii1? iiii iiii iaaa aaa1? aaam mrrr rrcs sdd1  sssd ddff fooo ooo0 | Extended Load/Store 2 [src1 + src2 * A + imm]
                      aaaa aaaa aaaa aaa1? aaaa aaaa aaa0 0hh1? aaaa accc cooo ooo0 | Conditional Branch
                                                                aaaa accc cooo ooo0 | Short Conditional Branch
@@ -24,6 +25,8 @@ iiii iiii iiii iii1? iiii iiii iaaa aaa1? aaam mrrr rrcs sdd1  sssd ddff fooo oo
 0000 0000 00ii iii1? iiii iiii iiii iii1? iiii irrr rrdi idd1  iiid dccc cooo ooo0 | Conditional Select Immediate
                                                                iiid dccc cooo ooo0 | Short Conditional Move Immediate
                                                                xxxx xxxx 1111 1110 | Hint
+                                                               0000 ffff fooo ooo0 | Expansion Root 1
+                                          0mms srrr rrs  ssd1  dddd ffff fooo ooo0 | Privileged Activity
                                                                                    |
                                           0cmm mrrr rrcs sdd1  sssd ddff fooo ooo0 | Float Arithmetic
                                           0cmm mc00 00ss sss1  dddd dfff fooo ooo0 | Unary Float Arithmetic
