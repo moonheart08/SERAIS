@@ -301,13 +301,19 @@
 0b100_011  | b00101 | 2      | PA     | ST.W.m dest, [src1]
 0b100_011  | b00110 | 2      | PA     | LD.B.m dest, [src1]
 0b100_011  | b00111 | 2      | PA     | ST.B.m dest, [src1]
-0b100_011  | b01001 | 2      | PA     | LDACC.m dest, [src1]
-0b100_011  | b01010 | 2      | PA     | RESERVED
-0b100_011  | b01011 | 2      | PA     | RETP.m
-0b100_011  | b01100 | 2      | PA     | SYSCALL.m src1, src2, src3
-0b100_011  | b01101 | 2      | PA     | TRAP.m
-0b100_011  | b01110 | 2      | PA     | BRKP
-0b100_011  | b1xxxx |        |        | RESERVED
+0b100_011  | b01000 | 2      | PA     | LDACC.m dest, [src1]
+0b100_011  | b01001 | 1      | PA     | RETP.m
+0b100_011  | b01010 | 2      | PA     | SYSCALL.m src1, src2, src3
+0b100_011  | b01011 | 1      | PA     | TRAP.m
+0b100_011  | b01100 | 1-n    | PA     | BRKP (Special, always ignores extension words)
+0b100_011  | b10000 | 2-4    | LCB    | DBRcc.D src1, imm       | Decrement, branch on resulting condition.
+0b100_011  | b10001 | 2-4    | LCB    | DBRcc.Q src1, imm       | Decrement, branch on resulting condition.
+0b100_011  | b10010 | 2-4    | LCB    | IBRcc.D src1, imm       | Increment, branch on resulting condition.
+0b100_011  | b10011 | 2-4    | LCB    | IBRcc.Q src1, imm       | Increment, branch on resulting condition.
+0b100_011  | b10100 | 2-4    | LCB    | TBRcc.D src1, imm       | Test, branch on resulting condition.
+0b100_011  | b10101 | 2-4    | LCB    | TBRcc.Q src1, imm       | Test, branch on resulting condition.
+0b100_011  | b10110 | 2-4    | LCBC   | CBRcc.D src1, src2, imm | Compare, branch on resulting condition.
+0b100_011  | b10111 | 2-4    | LCBC   | CBRcc.Q src1, src2, imm | Compare, branch on resulting condition.
 -----------|--------|--------|--------|-------------
 0b100_1xx  |                          | TODO, all sorts of odds and ends.
 -----------|--------|--------|--------|-------------
