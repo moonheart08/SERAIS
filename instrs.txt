@@ -322,9 +322,40 @@
 0b100_100  | b0001  | 2      | CFA    | MADD.Q dest, src1, src2, src3
 0b100_100  | b0010  | 2      | CFA    | FMADD.D fdest, fsrc1, fsrc2, fsrc3
 0b100_100  | b0011  | 2      | CFA    | FMADD.Q fdest, fsrc1, fsrc2, fsrc3
+0b100_100  | b0100  | 2      | EA     | MIN.D dest, src1, src2
+0b100_100  | b0101  | 2-4    | IEA    | MIN.D dest, src1, imm
+0b100_100  | b0110  | 2      | EA     | MIN.Q dest, src1, src2
+0b100_100  | b0111  | 2-4    | IEA    | MIN.Q dest, src1, imm
+0b100_100  | b1000  | 2      | EA     | MAX.D dest, src1, src2
+0b100_100  | b1001  | 2-4    | IEA    | MAX.D dest, src1, imm
+0b100_100  | b1010  | 2      | EA     | MAX.Q dest, src1, src2
+0b100_100  | b1011  | 2-4    | IEA    | MAX.Q dest, src1, imm
+0b100_100  | b1100  | 2      | EA     | BMAK.D dest, src1, src2
+0b100_100  | b1101  | 2-4    | IEA    | BMAK.D dest, src1, imm
+0b100_100  | b1110  | 2      | EA     | BMAK.Q dest, src1, src2
+0b100_100  | b1111  | 2-4    | IEA    | BMAK.Q dest, src1, imm
 -----------|--------|--------|--------|-------------
-0b100_1xx  |                          | TODO, all sorts of odds and ends.
+0b100_101  | b0000  | 2      | EA     | BEXT.D dest, src1, src2
+0b100_101  | b0001  | 2-4    | IEA    | BEXT.D dest, src1, imm
+0b100_101  | b0010  | 2      | EA     | BEXT.Q dest, src1, src2
+0b100_101  | b0011  | 2-4    | IEA    | BEXT.Q dest, src1, imm
+0b100_101  | b0100  | 1-2    | UA     | BSF.D dest, src1
+0b100_101  | b0101  | 1-2    | UA     | BSF.Q dest, src1
+0b100_101  | b0110  | 1-2    | UA     | BSR.D dest, src1
+0b100_101  | b0111  | 1-2    | UA     | BSR.Q dest, src1
+0b100_101  | b1000  | 1-2    | UA     | MSB dest, src1
+0b100_101  | b1001  | 1-2    | UA     | LSB dest, src1
+0b100_101  | b1010  | 1-2    | UA     | BSWAP.D dest, src1
+0b100_101  | b1011  | 1-2    | UA     | BSWAP.Q dest, src1
+0b100_101  | b1100  | 1-2    | UA     | LZCNT.D dest, src1
+0b100_101  | b1101  | 1-2    | UA     | LZCNT.Q dest, src1
+0b100_101  | b1110  | 1-2    | UA     | TZCNT.D dest, src1
+0b100_101  | b1111  | 1-2    | UA     | TZCNT.Q dest, src1
 -----------|--------|--------|--------|-------------
-0b101_xxx  |                          | RESERVED; Vector/SIMD extension
------------|--------|--------|--------|-------------
-0b11x_xxx  |                          | RESERVED; Future expansion
+
+UNUSED OPCODES: 26 of 64;
+0b100_110 1
+0b100_111 1
+0b101_xxx 8
+0b110_xxx 8
+0b111_xxx 8
