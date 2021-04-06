@@ -1,3 +1,21 @@
+o | opcode
+f | func
+d | dest
+s | src1
+r | src2
+q | src3
+e | extension control
+c | Control bit(s), per op usage.
+  | LD/ST and CA forms use it to control using a special register as src1
+  | Conditional instructons use this for the conditional field.
+  | Floats use it for controlling exception behavior.
+i | immediate
+m | Mode bit(s), per op usage.
+  | LD/ST use it to decide between no writeback, preincrement, postincrement, and RESERVED.
+  | Floats use it for rounding mode control.
+a | adjust/offset
+
+
 0123 4567 89AB CDEF  0123 4567 89AB CDEF  0123 4567 89AB CDEF  0123 4567 89AB CDEF
 xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx0
                                                                sssd ddff fooo ooo0 | Short Core Arithmetic
