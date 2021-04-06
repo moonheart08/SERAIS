@@ -39,3 +39,14 @@ _gets:          ; void gets(x0: *char buf, x1: uint32_t buf_len)
                 st.b x1, [x4 + x3]                              ; Terminate with a zero byte                               |
 .exit:          ld.q x30, [sp - 8]+                             ; Decrement sp, restore link register from stack           <
                 ret x30                                         ; Return
+
+                ; clobbers x0, x1, x2
+_puts:          ; void puts(x0: *char buf)
+                mov x1, x0
+                st.q x30, +[sp + 8]
+.loop:          ld.b x0, [x1 + 1]+
+                tbrz.d x0, x0, .exit
+                jalr x30, _putc
+                jmpr .loop
+.exit:          ld.q x30, [sp - 8]+                             ; Decrement sp, restore link register from stack
+                ret x30                                         ; Return
