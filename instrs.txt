@@ -352,9 +352,19 @@
 0b100_101  | b1110  | 1-2    | UA     | TZCNT.D dest, src1
 0b100_101  | b1111  | 1-2    | UA     | TZCNT.Q dest, src1
 -----------|--------|--------|--------|-------------
+0b100_101  | b0000  | 1-2    | UA     | CMP.D dest, src1
+0b100_101  | b0001  | 1-4    | IUA    | CMP.D dest, imm
+0b100_101  | b0010  | 1-2    | UA     | CMP.Q dest, src1
+0b100_101  | b0011  | 1-4    | IUA    | CMP.Q dest, imm
+0b100_101  | b0100  | 1-2    | CS     | SCMPcc.D dest, src1, src2
+0b100_101  | b0101  | 1-4    | ICS    | SCMPcc.D dest, src1, imm
+0b100_101  | b0110  | 1-2    | CS     | SCMPcc.Q dest, src1, src2
+0b100_101  | b0111  | 1-4    | ICS    | SCMPcc.Q dest, src1, imm
+0b100_101  | b1000  | 1-2    | UA     | POPCNT.D dest, src1
+0b100_101  | b1001  | 1-2    | UA     | POPCNT.Q dest, src1
 
-UNUSED OPCODES: 26 of 64;
-0b100_110 1
+-----------|--------|--------|--------|-------------
+UNUSED OPCODES: 25 of 64;
 0b100_111 1
 0b101_xxx 8
 0b110_xxx 8
