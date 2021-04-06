@@ -18,37 +18,29 @@ a | adjust/offset
 
 0123 4567 89AB CDEF  0123 4567 89AB CDEF  0123 4567 89AB CDEF  0123 4567 89AB CDEF
 xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx0
-                                                               sssd ddff fooo ooo0 | Short Core Arithmetic
-                                          000e errr rrcs sdd1  sssd ddff fooo ooo0 | Core Arithmetic
+                                          000e errr rrcs sdd1? sssd ddff fooo ooo0 | Core Arithmetic
 0000 000i iiii iii1? iiii iiii iiii iaa1? 0iii iiii iics sdd1  sssd ddff fooo ooo0 | Immediate Core Arithmetic
                      0000 0000 00qq qqq1? 000e errr rrcs sdd1  sssd ddff fooo ooo0 | Core Fused Arithmetic
                                                                iiid ddff fooo ooo0 | Small Immediate Core Arithmetic
                                           iiii iiii iiii iii1  dddd dfff fooo ooo0 | Packed Immediate Core Arithmetic
-                                                               dddd dfff fooo ooo0 | Short Unary Arithmetic
-                                          000e e000 00ss sss1  dddd dfff fooo ooo0 | Unary Arithmetic
+                                          000e e000 00ss sss1? dddd dfff fooo ooo0 | Unary Arithmetic
                      iiii iiii iiii iii1? iiii iiii iiii idd1? iidd dfff fooo ooo0 | Immediate Unary Arithmetic
-                                                               sssd ddff fooo ooo0 | Alternate Short Unary Arithmetic
-                                          000e e000 000s sdd1  sssd ddff fooo ooo0 | Alternate Unary Arithmetic
+                                          000e e000 000s sdd1? sssd ddff fooo ooo0 | Alternate Unary Arithmetic
                      iiii iiii iiii iii1? iiii iiii iiii idd1? iiid ddff fooo ooo0 | Immediate Alternate Unary Arithmetic
-0000 0000 iiii iii1? iiii iiii iiii iii1? iiim miii iics sdd1  sssd ddff fooo ooo0 | Load/Store 1 [src1 + imm]
-                                                               sssd ddff fooo ooo0 | Short Load/Store 1 [src1]
-                                          aaam mrrr rrcs sdd1  sssd ddff fooo ooo0 | Load/Store 2 [src1 + src2 * A]
-                                                               sssd ddff fooo ooo0 | Short Load/Store 2 [dest + src2 * Access size]
+0000 0000 iiii iii1? iiii iiii iiii iii1? iiim miii iics sdd1? sssd ddff fooo ooo0 | Load/Store 1 [src1 + imm]
+                                          aaam mrrr rrcs sdd1? sssd ddff fooo ooo0 | Load/Store 2 [src1 + src2 * A]
                                                                
 iiii iiii iiii iii1? iiii iiii iaaa aaa1? aaam mrrr rrcs sdd1  sssd ddff fooo ooo0 | Extended Load/Store 2 [src1 + src2 * A + imm]
                      aaaa aaaa aaaa aaa1? aaaa aaaa aaa0 0hh1? aaaa accc cooo ooo0 | Conditional Branch
-                                                               aaaa accc cooo ooo0 | Short Conditional Branch
-                                          0000 0rrr rrds sdd1  sssd dccc cooo ooo0 | Conditional Select
-                                                               sssd dccc cooo ooo0 | Short Conditional Move
-0000 0000 00ii iii1? iiii iiii iiii iii1? iiii irrr rrdi idd1  iiid dccc cooo ooo0 | Conditional Select Immediate
-                                                               iiid dccc cooo ooo0 | Short Conditional Move Immediate
+0000 0000 aaaa aaa1? aaaa aaaa aaaa aaa1? aaaa aaaa aadd ddd1  cccc ffff fooo ooo0 | Long Conditional Branch
+                                          0000 0rrr rrds sdd1? sssd dccc cooo ooo0 | Conditional Select
+0000 0000 00ii iii1? iiii iiii iiii iii1? iiii irrr rrdi idd1? iiid dccc cooo ooo0 | Conditional Select Immediate
                                                                xxxx xxxx 1111 1110 | Hint
                                                                0000 ffff fooo ooo0 | Expansion Root 1
                                           0mms srrr rrss ssd1  dddd ffff fooo ooo0 | Privileged Activity
                                                                                    |
                                           0cmm mrrr rrcs sdd1  sssd ddff fooo ooo0 | Float Arithmetic
-                                          0cmm mc00 00ss sss1  dddd dfff fooo ooo0 | Unary Float Arithmetic
-                                                               dddd dfff fooo ooo0 | Short Unary Float Arithmetic
+                                          0cmm mc00 00ss sss1? dddd dfff fooo ooo0 | Unary Float Arithmetic
 0000 0000 0000 0ii1? iiii iiii iiii iii1? iiii iiii iiii iii1? dddd dfff fooo ooo0 | Immediate Unary Float Arithmetic
 0000 0000 00ii iii1? iiii iiii iiii iii1? 0cmm miii iics sdd1  sssd ddff fooo ooo0 | Immediate Float Arithmetic (TBD: Immediate bit layout)
                      0000 0000 00qq qqq1? 0cmm mrrr rrcs sdd1  sssd ddff fooo ooo0 | Float Fused Arithmetic
