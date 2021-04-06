@@ -313,7 +313,9 @@
 0b100_011  | b10100 | 2-4    | LCB    | TBRcc.D src1, imm       | Test, branch on resulting condition.
 0b100_011  | b10101 | 2-4    | LCB    | TBRcc.Q src1, imm       | Test, branch on resulting condition.
 0b100_011  | b10110 | 2-4    | LCBC   | CBRcc.D src1, src2, imm | Compare, branch on resulting condition.
-0b100_011  | b10111 | 2-4    | LCBC   | CBRcc.Q src1, src2, imm | Compare, branch on resulting condition.
+0b100_011  | b10111 | 2-4    | ILCBC  | CBRcc.D src1, imm1, imm2 | Compare, branch on resulting condition.
+0b100_011  | b11000 | 2-4    | LCBC   | CBRcc.Q src1, src2, imm | Compare, branch on resulting condition.
+0b100_011  | b11001 | 2-4    | ILCBC  | CBRcc.Q src1, imm1, imm2 | Compare, branch on resulting condition.
 -----------|--------|--------|--------|-------------
 0b100_1xx  |                          | TODO, all sorts of odds and ends.
 -----------|--------|--------|--------|-------------
