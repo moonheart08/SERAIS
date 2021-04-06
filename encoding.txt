@@ -40,7 +40,7 @@ aaaa aaaa aaaa aaa1? aaaa aaaa aaaa aaa1? aaih hiii iidd ddd1  cccc ffff fooo oo
                                                                0000 ffff fooo ooo0 | Expansion Root 1
                                           0mms srrr rrss ssd1  dddd ffff fooo ooo0 | Privileged Activity
                                           000e errr rrss sss1? dddd dfff fooo ooo0 | Extended Arithmetic
-0000 000i iiii iii1? iiii iiii iiii iaa1? 1iii iiii iiss sss1? dddd dfff fooo ooo0 | Immediate Extended Arithmetic
+0000 0000 iiii iii1? iiii iiii iiii iaa1? iiii iiii iiss sss1? dddd dfff fooo ooo0 | Immediate Extended Arithmetic
                                                                                    |
                                           0cmm mrrr rrcs sdd1  sssd ddff fooo ooo0 | Float Arithmetic
                                           0cmm mc00 00ss sss1? dddd dfff fooo ooo0 | Unary Float Arithmetic
