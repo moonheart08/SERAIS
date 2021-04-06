@@ -1,0 +1,73 @@
+VERSION 0.0.1 | UNSTABLE, DO NOT DEPEND ON.
+REG | Description                           | Saver
+----|---------------------------------------|--------
+x0  | Result/Argument 1                     | Caller
+x1  | Result/Argument 2                     | Caller
+x2  | Temporary                             | Caller
+x3  | Temporary                             | Caller
+x4  | Temporary                             | Caller
+x5  | Temporary                             | Caller
+x6  | Result/Argument 3/Temporary           | Caller
+x7  | Result/Indirect Result Location       | Caller if result, else callee
+x8  | Result/Argument 4                     | Caller if result, else callee
+x9  | Result/Argument 5                     | Caller if result, else callee
+x10 | Result/Argument 6                     | Caller if result, else callee
+x11 | Result/Argument 7                     | Caller if result, else callee
+x12 | Temporary                             | Caller
+x13 | Temporary                             | Caller
+x14 | Temporary                             | Caller
+x15 | Temporary                             | Caller
+x16 | Temporary                             | Caller
+x17 | Caller use                            | Callee
+x18 | Caller use                            | Callee
+x19 | Caller use                            | Callee
+x20 | Caller use                            | Callee
+x21 | Caller use                            | Callee
+x22 | Caller use                            | Callee
+x23 | Caller use                            | Callee
+x24 | Caller use                            | Callee
+x25 | Caller use                            | Callee
+x26 | Caller use                            | Callee
+x27 | Caller use                            | Callee
+x28 | Caller use                            | Callee
+x29 | Caller use                            | Callee
+x30 | Link Register                         | Callee
+x31 | Zero register                         | N/A
+SP  | System stack pointer                  | Callee
+CR0 | Thread Context Pointer                | Callee
+CR1 | Reserved to software choice.          | N/A, ABI compliant code should not modify or use.
+CR2 | Frame pointer                         | Callee
+CR3 | UNUSED                                | N/A, ABI compliant code should not modify or use. Reserved to OS.
+----|---------------------------------------|--------
+f0  | Result/Argument 1                     | Caller
+f1  | Result/Argument 2                     | Caller
+f2  | Temporary                             | Caller
+f3  | Temporary                             | Caller
+f4  | Temporary                             | Caller
+f5  | Temporary                             | Caller
+f6  | Result/Argument 3/Temporary           | Caller
+f7  | Result/Argument 4/Temporary           | Caller
+f8  | Result/Argument 5                     | Caller if result, else callee
+f9  | Result/Argument 6                     | Caller if result, else callee
+f10 | Result/Argument 7                     | Caller if result, else callee
+f11 | Temporary                             | Caller
+f12 | Temporary                             | Caller
+f13 | Temporary                             | Caller
+f14 | Temporary                             | Caller
+f15 | Temporary                             | Caller
+f16 | Caller use                            | Callee
+f17 | Caller use                            | Callee
+f18 | Caller use                            | Callee
+f19 | Caller use                            | Callee
+f20 | Caller use                            | Callee
+f21 | Caller use                            | Callee
+f22 | Caller use                            | Callee
+f23 | Caller use                            | Callee
+f24 | Caller use                            | Callee
+f25 | Caller use                            | Callee
+f26 | Caller use                            | Callee
+f27 | Caller use                            | Callee
+f28 | Caller use                            | Callee
+f29 | Caller use                            | Callee
+f30 | Caller use                            | Callee
+f31 | Zero Register                         | N/A
