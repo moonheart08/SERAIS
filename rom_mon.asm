@@ -32,7 +32,7 @@ _gets:          ; gets(x0: *char buf, x1: uint32_t buf_len)
                 add x3, 1                                       ; Increment idx                                         |  |
                 cbre.d x0, '\n', .term_exit                     ; Compare chr to newline, branch if equal. ------\      |  |
                 dbrnz.d x1, .loop                               ; Decrement buf_len, branch if not zero. --------|------/  |
-                sub x3, 1                                       ; Out of room. Overwrite last char with null.    |         |
+                                                                ; Out of room. Overwrite last char with null.    |         |
 .term_exit:     mov x1, 0                                       ; Store 0 to x1, which is now unused/safe to use <         |
                 st.b x1, [x5 + x3]                              ; Terminate with a zero byte                               |
 .exit:          ld.q x30, [sp - 8]+                             ; Decrement sp, restore link register from stack           <
