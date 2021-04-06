@@ -169,49 +169,49 @@
 0b010_111  | 0b110  | 1-4    | LS2    | RESERVED LDNT.W dest, [src1 + src2 * A]
 0b010_111  | 0b111  | 1-4    | LS2    | RESERVED STNT.W dest, [src1 + src2 * A]
 -----------|--------|--------|--------|-------------
-0b011_000  | 0b000  | 1-2    | FA     | FADD.Q fdest, fsrc1, fsrc2
-0b011_000  | 0b001  | 1-4    | IFA    | FADD.Q fdest, fsrc1, imm
-0b011_000  | 0b010  | 1-2    | FA     | FADD.D fdest, fsrc1, fsrc2
-0b011_000  | 0b011  | 1-4    | IFA    | FADD.D fdest, fsrc1, imm
-0b011_000  | 0b100  | 1-2    | FA     | FSUB.Q fdest, fsrc1, fsrc2
-0b011_000  | 0b101  | 1-4    | IFA    | FSUB.Q fdest, fsrc1, imm
-0b011_000  | 0b110  | 1-2    | FA     | FSUB.D fdest, fsrc1, fsrc2
-0b011_000  | 0b111  | 1-4    | IFA    | FSUB.D fdest, fsrc1, imm
+0b011_000  | 0b000  | 1-2    | FA     | FADD.D fdest, fsrc1, fsrc2
+0b011_000  | 0b001  | 1-4    | IFA    | FADD.D fdest, fsrc1, imm
+0b011_000  | 0b010  | 1-2    | FA     | FADD.Q fdest, fsrc1, fsrc2
+0b011_000  | 0b011  | 1-4    | IFA    | FADD.Q fdest, fsrc1, imm
+0b011_000  | 0b100  | 1-2    | FA     | FSUB.D fdest, fsrc1, fsrc2
+0b011_000  | 0b101  | 1-4    | IFA    | FSUB.D fdest, fsrc1, imm
+0b011_000  | 0b110  | 1-2    | FA     | FSUB.Q fdest, fsrc1, fsrc2
+0b011_000  | 0b111  | 1-4    | IFA    | FSUB.Q fdest, fsrc1, imm
 -----------|--------|--------|--------|-------------
-0b011_001  | 0b000  | 1-2    | FA     | FMIN.Q fdest, fsrc1, fsrc2
-0b011_001  | 0b001  | 1-4    | IFA    | FMIN.Q fdest, fsrc1, imm
-0b011_001  | 0b010  | 1-2    | FA     | FMIN.D fdest, fsrc1, fsrc2
-0b011_001  | 0b011  | 1-4    | IFA    | FMIN.D fdest, fsrc1, imm
-0b011_001  | 0b100  | 1-2    | FA     | FMAX.Q fdest, fsrc1, fsrc2
-0b011_001  | 0b101  | 1-4    | IFA    | FMAX.Q fdest, fsrc1, imm
-0b011_001  | 0b110  | 1-2    | FA     | FMAX.D fdest, fsrc1, fsrc2
+0b011_001  | 0b000  | 1-2    | FA     | FMIN.D fdest, fsrc1, fsrc2
+0b011_001  | 0b001  | 1-4    | IFA    | FMIN.D fdest, fsrc1, imm
+0b011_001  | 0b010  | 1-2    | FA     | FMIN.Q fdest, fsrc1, fsrc2
+0b011_001  | 0b011  | 1-4    | IFA    | FMIN.Q fdest, fsrc1, imm
+0b011_001  | 0b100  | 1-2    | FA     | FMAX.D fdest, fsrc1, fsrc2
+0b011_001  | 0b101  | 1-4    | IFA    | FMAX.D fdest, fsrc1, imm
+0b011_001  | 0b110  | 1-2    | FA     | FMAX.Q fdest, fsrc1, fsrc2
 0b011_001  | 0b111  | 1-4    | IFA    | FMAX.D fdest, fsrc1, imm
 -----------|--------|--------|--------|-------------
-0b011_010  | 0b0000 | 1-2    | UFA    | FSQRT.Q fdest, fsrc1
-0b011_010  | 0b0001 | 1-2    | UFA    | FRSQRT.Q fdest, fsrc1
-0b011_010  | 0b0010 | 1-2    | UFA    | FSQRT.D fdest, fsrc1
-0b011_010  | 0b0011 | 1-2    | UFA    | FRSQRT.D fdest, fsrc1
-0b011_010  | 0b0100 | 1-2    | UFA    | FABS.Q fdest, fsrc1
-0b011_010  | 0b0101 | 1-2    | UFA    | FNEG.Q fdest, fsrc1
-0b011_010  | 0b0110 | 1-2    | UFA    | FABS.D fdest, fsrc1
-0b011_010  | 0b0111 | 1-2    | UFA    | FNEG.D fdest, fsrc1
-0b011_010  | 0b1000 | 2      | UFA    | F2I.Q dest, fsrc1
-0b011_010  | 0b1001 | 2      | UFA    | I2F.Q fdest, src1
-0b011_010  | 0b1010 | 2      | UFA    | F2I.D dest, fsrc1
-0b011_010  | 0b1011 | 2      | UFA    | I2F.D fdest, src1
+0b011_010  | 0b0000 | 1-2    | UFA    | FSQRT.D fdest, fsrc1
+0b011_010  | 0b0001 | 1-2    | UFA    | FRSQRT.D fdest, fsrc1
+0b011_010  | 0b0010 | 1-2    | UFA    | FSQRT.Q fdest, fsrc1
+0b011_010  | 0b0011 | 1-2    | UFA    | FRSQRT.Q fdest, fsrc1
+0b011_010  | 0b0100 | 1-2    | UFA    | FABS.D fdest, fsrc1
+0b011_010  | 0b0101 | 1-2    | UFA    | FNEG.D fdest, fsrc1
+0b011_010  | 0b0110 | 1-2    | UFA    | FABS.Q fdest, fsrc1
+0b011_010  | 0b0111 | 1-2    | UFA    | FNEG.Q fdest, fsrc1
+0b011_010  | 0b1000 | 2      | UFA    | F2I.D dest, fsrc1
+0b011_010  | 0b1001 | 2      | UFA    | I2F.D fdest, src1
+0b011_010  | 0b1010 | 2      | UFA    | F2I.Q dest, fsrc1
+0b011_010  | 0b1011 | 2      | UFA    | I2F.Q fdest, src1
 0b011_010  | 0b1100 | 2      | UFA    | F2F.DQ fdest, fsrc1
 0b011_010  | 0b1101 | 2      | UFA    | F2F.QD fdest, fsrc1
 0b011_010  | 0b1110 | 2      | UFA    | RESERVED
 0b011_010  | 0b1111 | 2      | UFA    | RESERVED
 -----------|--------|--------|--------|-------------
-0b011_011  | 0b000  | 1-2    | FA     | FMUL.Q fdest, fsrc1, fsrc2
-0b011_011  | 0b001  | 1-4    | IFA    | FMUL.Q fdest, fsrc1, imm
-0b011_011  | 0b010  | 1-2    | FA     | FMUL.D fdest, fsrc1, fsrc2
-0b011_011  | 0b011  | 1-4    | IFA    | FMUL.D fdest, fsrc1, imm
-0b011_011  | 0b100  | 1-2    | FA     | FDIV.Q fdest, fsrc1, fsrc2
-0b011_011  | 0b101  | 1-4    | IFA    | FDIV.Q fdest, fsrc1, imm
-0b011_011  | 0b110  | 1-2    | FA     | FDIV.D fdest, fsrc1, fsrc2
-0b011_011  | 0b111  | 1-4    | IFA    | FDIV.D fdest, fsrc1, imm
+0b011_011  | 0b000  | 1-2    | FA     | FMUL.D fdest, fsrc1, fsrc2
+0b011_011  | 0b001  | 1-4    | IFA    | FMUL.D fdest, fsrc1, imm
+0b011_011  | 0b010  | 1-2    | FA     | FMUL.Q fdest, fsrc1, fsrc2
+0b011_011  | 0b011  | 1-4    | IFA    | FMUL.Q fdest, fsrc1, imm
+0b011_011  | 0b100  | 1-2    | FA     | FDIV.D fdest, fsrc1, fsrc2
+0b011_011  | 0b101  | 1-4    | IFA    | FDIV.D fdest, fsrc1, imm
+0b011_011  | 0b110  | 1-2    | FA     | FDIV.Q fdest, fsrc1, fsrc2
+0b011_011  | 0b111  | 1-4    | IFA    | FDIV.Q fdest, fsrc1, imm
 -----------|--------|--------|--------|-------------
 0b011_100  | 0b000  | 1-2    | FA     | FREM.D dest, src1, src2
 0b011_100  | 0b001  | 1-4    | IFA    | FREM.D dest, src1, imm
@@ -222,23 +222,23 @@
 0b011_100  | 0b110  | 1-2    | ?      | RESERVED
 0b011_100  | 0b111  | 1-4    | ?      | RESERVED
 -----------|--------|--------|--------|-------------
-0b011_101  | 0b000  | 1-2    | FA     | FMINN.Q fdest, fsrc1, fsrc2
-0b011_101  | 0b001  | 1-4    | IFA    | FMINN.Q fdest, fsrc1, imm
-0b011_101  | 0b010  | 1-2    | FA     | FMINN.D fdest, fsrc1, fsrc2
-0b011_101  | 0b011  | 1-4    | IFA    | FMINN.D fdest, fsrc1, imm
-0b011_101  | 0b100  | 1-2    | FA     | FMAXN.Q fdest, fsrc1, fsrc2
-0b011_101  | 0b101  | 1-4    | IFA    | FMAXN.Q fdest, fsrc1, imm
-0b011_101  | 0b110  | 1-2    | FA     | FMAXN.D fdest, fsrc1, fsrc2
-0b011_101  | 0b111  | 1-4    | IFA    | FMAXN.D fdest, fsrc1, imm
+0b011_101  | 0b000  | 1-2    | FA     | FMINN.D fdest, fsrc1, fsrc2
+0b011_101  | 0b001  | 1-4    | IFA    | FMINN.D fdest, fsrc1, imm
+0b011_101  | 0b010  | 1-2    | FA     | FMINN.Q fdest, fsrc1, fsrc2
+0b011_101  | 0b011  | 1-4    | IFA    | FMINN.Q fdest, fsrc1, imm
+0b011_101  | 0b100  | 1-2    | FA     | FMAXN.D fdest, fsrc1, fsrc2
+0b011_101  | 0b101  | 1-4    | IFA    | FMAXN.D fdest, fsrc1, imm
+0b011_101  | 0b110  | 1-2    | FA     | FMAXN.Q fdest, fsrc1, fsrc2
+0b011_101  | 0b111  | 1-4    | IFA    | FMAXN.Q fdest, fsrc1, imm
 -----------|--------|--------|--------|-------------
-0b011_110  | 0b0000 | 1-2    | UFA    | FCMPQ.Q fsrc1, fsrc2
-0b011_110  | 0b0001 | 2-4    | IUFA   | FCMPQ.Q fsrc1, imm
-0b011_110  | 0b0010 | 1-2    | UFA    | FCMPQ.D fsrc1, fsrc2
-0b011_110  | 0b0011 | 2-4    | IUFA   | FCMPQ.D fsrc1, imm
-0b011_110  | 0b0100 | 1-2    | UFA    | FCMPS.Q fsrc1, fsrc2
-0b011_110  | 0b0101 | 2-4    | IUFA   | FCMPS.Q fsrc1, imm
-0b011_110  | 0b0110 | 1-2    | UFA    | FCMPS.D fsrc1, fsrc2
-0b011_110  | 0b0111 | 2-4    | IUFA   | FCMPS.D fsrc1, imm
+0b011_110  | 0b0000 | 1-2    | UFA    | FCMPQ.D fsrc1, fsrc2
+0b011_110  | 0b0001 | 2-4    | IUFA   | FCMPQ.D fsrc1, imm
+0b011_110  | 0b0010 | 1-2    | UFA    | FCMPQ.Q fsrc1, fsrc2
+0b011_110  | 0b0011 | 2-4    | IUFA   | FCMPQ.Q fsrc1, imm
+0b011_110  | 0b0100 | 1-2    | UFA    | FCMPS.D fsrc1, fsrc2
+0b011_110  | 0b0101 | 2-4    | IUFA   | FCMPS.D fsrc1, imm
+0b011_110  | 0b0110 | 1-2    | UFA    | FCMPS.Q fsrc1, fsrc2
+0b011_110  | 0b0111 | 2-4    | IUFA   | FCMPS.Q fsrc1, imm
 0b011_110  | 0b1000 | 1-2    | UFA    | RESERVED
 0b011_110  | 0b1001 | 2-4    | IUFA   | RESERVED
 0b011_110  | 0b1010 | 1-2    | UFA    | RESERVED
@@ -248,22 +248,22 @@
 0b011_110  | 0b1110 | 1-2    | UFA    | RESERVED
 0b011_110  | 0b1111 | 2-4    | IUFA   | RESERVED
 -----------|--------|--------|--------|-------------
-0b011_111  | 0b0000 | 2      | PICA   | LDMSRM.Q dest, msr
-0b011_111  | 0b0001 | 2      | PICA   | STMSRM.Q dest, msr
-0b011_111  | 0b0010 | 2      | PICA   | LDMSRM.D dest, msr
-0b011_111  | 0b0011 | 2      | PICA   | STMSRM.D dest, msr
-0b011_111  | 0b0100 | 2      | PICA   | LDMSRH.Q dest, msr
-0b011_111  | 0b0101 | 2      | PICA   | STMSRH.Q dest, msr
-0b011_111  | 0b0110 | 2      | PICA   | LDMSRH.D dest, msr
-0b011_111  | 0b0111 | 2      | PICA   | STMSRH.D dest, msr
-0b011_111  | 0b1000 | 2      | PICA   | LDMSRS.Q dest, msr
-0b011_111  | 0b1001 | 2      | PICA   | STMSRS.Q dest, msr
-0b011_111  | 0b1010 | 2      | PICA   | LDMSRS.D dest, msr
-0b011_111  | 0b1011 | 2      | PICA   | STMSRS.D dest, msr
-0b011_111  | 0b1100 | 2      | PICA   | LDMSRU.Q dest, msr
-0b011_111  | 0b1101 | 2      | PICA   | STMSRU.Q dest, msr
-0b011_111  | 0b1110 | 2      | PICA   | LDMSRU.D dest, msr
-0b011_111  | 0b1111 | 2      | PICA   | STMSRU.D dest, msr
+0b011_111  | 0b0000 | 2      | PICA   | LDMSRM.D dest, msr
+0b011_111  | 0b0001 | 2      | PICA   | STMSRM.D dest, msr
+0b011_111  | 0b0010 | 2      | PICA   | LDMSRM.Q dest, msr
+0b011_111  | 0b0011 | 2      | PICA   | STMSRM.Q dest, msr
+0b011_111  | 0b0100 | 2      | PICA   | LDMSRH.D dest, msr
+0b011_111  | 0b0101 | 2      | PICA   | STMSRH.D dest, msr
+0b011_111  | 0b0110 | 2      | PICA   | LDMSRH.Q dest, msr
+0b011_111  | 0b0111 | 2      | PICA   | STMSRH.Q dest, msr
+0b011_111  | 0b1000 | 2      | PICA   | LDMSRS.D dest, msr
+0b011_111  | 0b1001 | 2      | PICA   | STMSRS.D dest, msr
+0b011_111  | 0b1010 | 2      | PICA   | LDMSRS.Q dest, msr
+0b011_111  | 0b1011 | 2      | PICA   | STMSRS.Q dest, msr
+0b011_111  | 0b1100 | 2      | PICA   | LDMSRU.D dest, msr
+0b011_111  | 0b1101 | 2      | PICA   | STMSRU.D dest, msr
+0b011_111  | 0b1110 | 2      | PICA   | LDMSRU.Q dest, msr
+0b011_111  | 0b1111 | 2      | PICA   | STMSRU.Q dest, msr
 -----------|--------|--------|--------|-------------
 0b100_000  | 0b0000 | 1-2    | UA     | BT src1, src2
 0b100_000  | 0b0001 | 1-2    | IUA    | BT src1, imm
