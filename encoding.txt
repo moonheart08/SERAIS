@@ -32,8 +32,8 @@ xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xx
                                                                
 iiii iiii iiii iii1? iiii iiii iaaa aaa1? aaam mrrr rrcs sdd1  sssd ddff fooo ooo0 | Extended Load/Store 2 [src1 + src2 * A + imm]
                      aaaa aaaa aaaa aaa1? aaaa aaaa aaa0 0hh1? aaaa accc cooo ooo0 | Conditional Branch
-0000 00aa aaaa aaa1? aaaa aaaa aaaa aaa1? aaad daaa aadd dhh1  cccc ffff fooo ooo0 | Long Conditional Branch
-0aaa aaaa aaaa aaa1? aaaa aaaa aaaa aaa1? aaad dsss ssdd dhh1  cccc ffff fooo ooo0 | Long Conditional Branch Compare
+0000 00aa aaaa aaa1? aaaa aaaa aaaa aaa1? aaah haaa aadd ddd1  cccc ffff fooo ooo0 | Long Conditional Branch
+0aaa aaaa aaaa aaa1? aaaa aaaa aaaa aaa1? aaah hsss ssdd ddd1  cccc ffff fooo ooo0 | Long Conditional Branch Compare
                                           0000 0rrr rrds sdd1? sssd dccc cooo ooo0 | Conditional Select
 0000 0000 00ii iii1? iiii iiii iiii iii1? iiii irrr rrdi idd1? iiid dccc cooo ooo0 | Conditional Select Immediate
                                                                xxxx xxxx 1111 1110 | Hint
