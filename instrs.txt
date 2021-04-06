@@ -316,6 +316,12 @@
 0b100_011  | b10111 | 2-4    | ILCBC  | CBRcc.D src1, imm1, imm2 | Compare, branch on resulting condition.
 0b100_011  | b11000 | 2-4    | LCBC   | CBRcc.Q src1, src2, imm | Compare, branch on resulting condition.
 0b100_011  | b11001 | 2-4    | ILCBC  | CBRcc.Q src1, imm1, imm2 | Compare, branch on resulting condition.
+0b100_011  | b11010 |        |        | RESERVED
+-----------|--------|--------|--------|-------------
+0b100_100  | b0000  | 2      | CFA    | MADD.D dest, src1, src2, src3
+0b100_100  | b0001  | 2      | CFA    | MADD.Q dest, src1, src2, src3
+0b100_100  | b0010  | 2      | CFA    | FMADD.D fdest, fsrc1, fsrc2, fsrc3
+0b100_100  | b0011  | 2      | CFA    | FMADD.Q fdest, fsrc1, fsrc2, fsrc3
 -----------|--------|--------|--------|-------------
 0b100_1xx  |                          | TODO, all sorts of odds and ends.
 -----------|--------|--------|--------|-------------
