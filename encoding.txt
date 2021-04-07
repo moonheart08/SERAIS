@@ -31,7 +31,7 @@ xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xx
                                           000e e000 000s sdd1? sssd ddff fooo ooo0 | Alternate Unary Arithmetic
                      iiii iiii iiii iii1? iiii iiii iiii idd1? iiid ddff fooo ooo0 | Immediate Alternate Unary Arithmetic
 0000 0000 iiii iii1? iiii iiii iiii iii1? iiim miii iics sdd1? sssd ddff fooo ooo0 | Load/Store 1 [src1 + imm]
-                                          aaam mrrr rrcs sdd1? sssd ddff fooo ooo0 | Load/Store 2 [src1 + src2 * A]
+                                          aaam mrrr rrcs sdd1  sssd ddff fooo ooo0 | Load/Store 2 [src1 + src2 * A]
 iiii iiii iiii iii1? iiii iiii iaaa aaa1? aaam mrrr rrcs sdd1  sssd ddff fooo ooo0 | Extended Load/Store 2 [src1 + src2 * A + imm]
                      aaaa aaaa aaaa aaa1? aaaa aaaa aaa0 0hh1? aaaa accc cooo ooo0 | Conditional Branch
 0000 00aa aaaa aaa1? aaaa aaaa aaaa aaa1? aaah haaa aadd ddd1  cccc ffff fooo ooo0 | Long Conditional Branch
