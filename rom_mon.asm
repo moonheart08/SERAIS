@@ -51,3 +51,4 @@ _puts:          ; void puts(x0: *char buf)
 .exit:          ld.q x30, [sp - 8]+                             ; Decrement sp, restore link register from stack
                 ret x30                                         ; Return
 
+; TODO: THE REST OF THE OWL
