@@ -14,6 +14,8 @@ m | Mode bit(s), per op usage.
   | LD/ST use it to decide between no writeback, preincrement, postincrement, and RESERVED.
   | Floats use it for rounding mode control.
 a | adjust/offset
+h | Hint bits
+  | Branches use them for Default/UNLIKELY/LIKELY/RANDOM hints.
 
 NOTATION: Words suffixed with ? are optional and may be omitted to make the instruction shorter, in exchange for limiting instruction capability.
 
