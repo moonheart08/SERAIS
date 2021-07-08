@@ -4,49 +4,14 @@ d | dest
 s | src1
 r | src2
 q | src3
-e | extension control
-c | Control bit(s), per op usage.
-  | LD/ST and CA forms use it to control using a special register as src1
-  | Conditional instructons use this for the conditional field.
-  | Floats use it for controlling exception behavior.
-i | immediate
-m | Mode bit(s), per op usage.
-  | LD/ST use it to decide between no writeback, preincrement, postincrement, and RESERVED.
-  | Floats use it for rounding mode control.
-a | adjust/offset
-h | Hint bits
-  | Branches use them for Default/UNLIKELY/LIKELY/RANDOM hints.
+e | Extension bits
+  | Used by core arithmetic instructions to control sign/zero extension of src2.
+a | Adjust bits
+  | Used by core arithmetic instructions to control how much to shift src2 by (0, 8, 16, 32)
 
 NOTATION: Words suffixed with ? are optional and may be omitted to make the instruction shorter, in exchange for limiting instruction capability.
 
 0123 4567 89AB CDEF  0123 4567 89AB CDEF  0123 4567 89AB CDEF  0123 4567 89AB CDEF
 xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx1  xxxx xxxx xxxx xxx0
-                                          000e errr rrcs sdd1? sssd ddff fooo ooo0 | Core Arithmetic
-0000 000i iiii iii1? iiii iiii iiii iaa1? 0iii iiii iics sdd1  sssd ddff fooo ooo0 | Immediate Core Arithmetic
-                                          qqqq qrrr rrss sss1  dddd dfff fooo ooo0 | Core Fused Arithmetic
-                                                               iiid ddff fooo ooo0 | Small Immediate Core Arithmetic
-                                          iiii iiii iiii iii1  dddd dfff fooo ooo0 | Packed Immediate Core Arithmetic
-                                          000e e000 00ss sss1? dddd dfff fooo ooo0 | Unary Arithmetic
-                     iiii iiii iiii iii1? iiii iiii iiii idd1? iidd dfff fooo ooo0 | Immediate Unary Arithmetic
-                                          000e e000 000s sdd1? sssd ddff fooo ooo0 | Alternate Unary Arithmetic
-                     iiii iiii iiii iii1? iiii iiii iiii idd1? iiid ddff fooo ooo0 | Immediate Alternate Unary Arithmetic
-0000 0000 iiii iii1? iiii iiii iiii iii1? iiim miii iics sdd1? sssd ddff fooo ooo0 | Load/Store 1 [src1 + imm]
-                                          aaam mrrr rrcs sdd1  sssd ddff fooo ooo0 | Load/Store 2 [src1 + src2 * A]
-iiii iiii iiii iii1? iiii iiii iaaa aaa1? aaam mrrr rrcs sdd1  sssd ddff fooo ooo0 | Extended Load/Store 2 [src1 + src2 * A + imm]
-                     aaaa aaaa aaaa aaa1? aaaa aaaa aaa0 0hh1? aaaa accc cooo ooo0 | Conditional Branch
-0000 00aa aaaa aaa1? aaaa aaaa aaaa aaa1? aaah haaa aadd ddd1  cccc ffff fooo ooo0 | Long Conditional Branch
-0aaa aaaa aaaa aaa1? aaaa aaaa aaaa aaa1? aaah hsss ssdd ddd1  cccc ffff fooo ooo0 | Long Conditional Branch Compare
-aaaa aaaa aaaa aaa1? aaaa aaaa aaaa aaa1? aaih hiii iidd ddd1  cccc ffff fooo ooo0 | Immediate Long Conditional Branch Compare
-                                          0000 0rrr rrds sdd1? sssd dccc cooo ooo0 | Conditional Select
-0000 0000 00ii iii1? iiii iiii iiii iii1? iiii irrr rrdi idd1? iiid dccc cooo ooo0 | Conditional Select Immediate
-                                                               xxxx xxxx 1111 1110 | Hint
-                                                               0000 ffff fooo ooo0 | Expansion Root 1
-                                          0mms srrr rrss ssd1  dddd ffff fooo ooo0 | Privileged Activity
-                                          000e errr rrss sss1? dddd dfff fooo ooo0 | Extended Arithmetic
-0000 0000 iiii iii1? iiii iiii iiii iaa1? iiii iiii iiss sss1? dddd dfff fooo ooo0 | Immediate Extended Arithmetic
-                                                                                   |
-                                          0cmm mrrr rrcs sdd1  sssd ddff fooo ooo0 | Float Arithmetic
-                                          0cmm mc00 00ss sss1? dddd dfff fooo ooo0 | Unary Float Arithmetic
-0000 0000 0000 0ii1? iiii iiii iiii iii1? iiii iiii iiii iii1? dddd dfff fooo ooo0 | Immediate Unary Float Arithmetic
-0000 0000 00ii iii1? iiii iiii iiii iii1? 0cmm miii iics sdd1  sssd ddff fooo ooo0 | Immediate Float Arithmetic (TBD: Immediate bit layout)
-                     0000 0000 00qq qqq1? 0cmm mrrr rrcs sdd1  sssd ddff fooo ooo0 | Float Fused Arithmetic
+                                          aaee esss sscr rdd1? dddr rrff fooo ooo0 Core Arithmetic
+0000 000i iiii iii1? iiii iiii iiii iii1? aaii isss ssci idd1? dddi iiff fooo ooo0 Immediate Core Arithmetic
